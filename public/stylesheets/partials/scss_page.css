@@ -1,0 +1,79 @@
+/*
+Syntax error: Invalid CSS after "@import ": expected uri, was "compass/css3"
+        on line 1 of /home/test/code/rails/_personal/gchamp/app/stylesheets/partials/scss_page.scss
+
+1: @import compass/css3
+2: 
+3: //-----------------------------------------------
+4: // The following html5-boilerplate styles should
+5: // probably be customized for each site
+6: //-----------------------------------------------
+
+Backtrace:
+/home/test/code/rails/_personal/gchamp/app/stylesheets/partials/scss_page.scss:1
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:841:in `expected'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:836:in `tok!'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:258:in `import_arg'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:822:in `expr!'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:250:in `block in import_directive'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:249:in `loop'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:249:in `import_directive'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:130:in `special_directive'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:109:in `directive'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:379:in `block_child'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:369:in `block_contents'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:57:in `stylesheet'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/scss/parser.rb:26:in `parse'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/engine.rb:320:in `_to_tree'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/engine.rb:241:in `block in render'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/util.rb:297:in `silence_sass_warnings'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/engine.rb:241:in `render'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin.rb:81:in `update_stylesheets'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin.rb:54:in `check_for_updates'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/sass-3.1.7/lib/sass/plugin/rack.rb:51:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `block in call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/home/test/.rvm/gems/ruby-1.9.2-p180@generic/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/home/test/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/test/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/test/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"@import \": expected uri, was \"compass/css3\"\A         on line 1 of /home/test/code/rails/_personal/gchamp/app/stylesheets/partials/scss_page.scss\A \A 1: @import compass/css3\A 2: \A 3: //-----------------------------------------------\A 4: // The following html5-boilerplate styles should\A 5: // probably be customized for each site\A 6: //-----------------------------------------------"; }
