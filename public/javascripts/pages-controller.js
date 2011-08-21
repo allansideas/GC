@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 04:47:24 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 11:44:56 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-controller.coffee
  */
 
@@ -24,6 +24,7 @@
       "pages/:page": "load_page"
     };
     PagesController.prototype.load_page = function(page) {
+      console.log("Page Change");
       return gc.App.Main.views.push(new gc.Views.PagesView({
         el: $('#main'),
         page: page

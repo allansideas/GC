@@ -9,6 +9,10 @@ class gc.Views.PagesView extends Backbone.View
     display_page: (page)->
       $('#main_nav li a').removeClass('current')
       targetOffset = @$("#" + page + "_page").offset().top + -100
-      $("body").animate({scrollTop: targetOffset}, 800)
+      console.log targetOffset
+      console.log page
+      #$(window).scrollTop(targetOffset)
+      $('html').animate({scrollTop: targetOffset}, 800)
+
       
       $('li.' + page + " a").addClass('current')

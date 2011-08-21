@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 05:16:47 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 11:44:17 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-view.coffee
  */
 
@@ -26,7 +26,9 @@
       var targetOffset;
       $('#main_nav li a').removeClass('current');
       targetOffset = this.$("#" + page + "_page").offset().top + -100;
-      $("body").animate({
+      console.log(targetOffset);
+      console.log(page);
+      $('html').animate({
         scrollTop: targetOffset
       }, 800);
       return $('li.' + page + " a").addClass('current');
