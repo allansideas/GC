@@ -321,6 +321,14 @@ p {
   padding: 0;
 }
 
+/* line 55, ../../app/stylesheets/partials/_page.sass */
+#container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
 /* line 1, ../../app/stylesheets/partials/_custom.sass */
 #main_nav {
   background: url(img/nav.png) left top no-repeat;
@@ -403,10 +411,10 @@ p {
 #pages_container {
   width: 980px;
   margin: 0 auto;
+  padding-top: 170px;
 }
-/* line 56, ../../app/stylesheets/partials/_custom.sass */
+/* line 57, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #what_page {
-  margin-top: 170px;
   margin-left: 100px;
   width: 440px;
   background: url(img/sign.png) left top no-repeat;

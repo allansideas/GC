@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 11:44:17 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 22 Aug 2011 21:34:48 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-view.coffee
  */
 
@@ -23,12 +23,17 @@
       return this.display_page(options.page);
     };
     PagesView.prototype.display_page = function(page) {
-      var targetOffset;
+      var bodyelem, targetOffset;
       $('#main_nav li a').removeClass('current');
       targetOffset = this.$("#" + page + "_page").offset().top + -100;
       console.log(targetOffset);
       console.log(page);
-      $('html').animate({
+      if ($.browser.safari) {
+        bodyelem = $("body");
+      } else {
+        bodyelem = $("html,body");
+      }
+      bodyelem.animate({
         scrollTop: targetOffset
       }, 800);
       return $('li.' + page + " a").addClass('current');

@@ -12,7 +12,11 @@ class gc.Views.PagesView extends Backbone.View
       console.log targetOffset
       console.log page
       #$(window).scrollTop(targetOffset)
-      $('#container').animate({scrollTop: targetOffset}, 800)
+      if($.browser.safari)
+        bodyelem = $("body")
+      else
+        bodyelem = $("html,body")
+      bodyelem.animate({scrollTop: targetOffset}, 800)
 
       
       $('li.' + page + " a").addClass('current')
