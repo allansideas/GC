@@ -7,6 +7,7 @@ gem 'rails', '3.0.7'
 
 gem 'sqlite3'
 gem 'inherited_resources'
+gem "rake", "0.8.7"
 
 #Visual
 gem "compass", ">= 0.11.5"
