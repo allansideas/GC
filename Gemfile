@@ -18,6 +18,7 @@ gem "html5-boilerplate"
 gem 'barista'  
 gem "jquery-rails"
 gem "backbonejs-rails"
+gem "jammit"
 
 group :test, :development do                                                                                                                                                                                      
   gem 'rspec', '>=2.0.0.alpha.11'

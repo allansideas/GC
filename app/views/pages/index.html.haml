@@ -1,3 +1,8 @@
+:javascript
+  $(document).ready(function(){
+  window.Gc.App.Main.controllers.push(new window.Gc.Controllers.PagesController());
+  Backbone.history.start();
+  });
 #pages_container
   #what_page.page
     =render :partial => 'what'

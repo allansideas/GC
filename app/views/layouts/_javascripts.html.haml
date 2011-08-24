@@ -12,15 +12,15 @@
 :javascript
   window.jQuery || document.write("<script src='/javascripts/jquery.min.js'>\x3C/script>")
   
-= javascript_include_tag 'rails', 'plugins', 'underscore.min.js', 'json2.js', 'icanhaz.js', 'backbone.min.js', 'pages-controller.js', 'pages-view.js', 'main.js' 
+-#= javascript_include_tag 'rails', 'plugins', 'underscore.min.js', 'json2.js', 'icanhaz.js', 'backbone.min.js', 'mark_time-model', 'mark_times-controller', 'mark_time-view',    'pages-controller.js', 'pages-view.js', 'main.js' 
     
 -#  Append your own using content_for :javascripts
 = yield :javascripts
 
 -#backbone
-<script>
-window.Gc.App.Main.init();
-</script>
+-#<script>
+-#window.Gc.App.Main.init();
+-#</script>
 -# asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
 -# Looks for google_account_id first in ENV['GOOGLE_ACCOUNT_ID'] then in config/google.yml
 - if !google_account_id.blank?

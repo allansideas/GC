@@ -1,7 +1,3 @@
-/* DO NOT MODIFY. This file was compiled Sun, 21 Aug 2011 06:11:25 GMT from
- * /home/test/code/rails/_personal/gchamp/app/coffeescripts/main.coffee
- */
-
 (function() {
   var gc;
   gc = window.Gc || (window.Gc = {});
@@ -9,13 +5,16 @@
   gc.App.Main = {
     views: [],
     controllers: [],
+    collections: [],
+    models: [],
     init: function() {
       console.log('init Main');
       $.ajaxSetup({
         cache: false
       });
-      this.controllers.push(new gc.Controllers.PagesController);
-      return Backbone.history.start();
+      this.appModel = new Backbone.Model();
+      this.markTime = new gc.Models.MarkTime();
+      return this.markTimes = new gc.Collections.MarkTimesCollection();
     }
   };
   $(document).ready(function() {

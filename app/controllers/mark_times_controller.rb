@@ -1,2 +1,0 @@
-class MarkTimesController < ApplicationController
-end

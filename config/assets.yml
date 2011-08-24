@@ -1,0 +1,25 @@
+embed_assets: on
+javascript_compressor: yui
+template_extension: html.mustache
+template_function: "Handlebars.compile"
+
+javascripts:
+  common:
+    - public/javascripts/jquery.js
+    - public/javascripts/rails.js
+    - public/javascripts/underscore.js
+    - public/javascripts/underscore.date.min.js
+    - public/javascripts/backbone.js
+    - public/javascripts/handlebars.js
+      
+  application:
+    - public/javascripts/app/lib/*
+    - public/javascripts/app/app.js
+    - public/javascripts/app/models/*
+    - app/coffeescripts/templates/**/*
+    - public/javascripts/app/views/**/*
+    - public/javascripts/app/controllers/*
+    
+stylesheets:
+  common:
+    - public/stylesheets/screen.css

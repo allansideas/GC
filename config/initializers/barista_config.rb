@@ -6,6 +6,7 @@ Barista.configure do |c|
 
   # Change the output root, causing Barista to compile into public/coffeescripts
   # c.output_root = Rails.root.join("public", "coffeescripts")
+  c.output_root = Rails.root.join("public/javascripts", "app")
   #
   # Disable auto compile, use generated file directly:
   # c.auto_compile = false

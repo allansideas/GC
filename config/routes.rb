@@ -1,5 +1,6 @@
 Gchamp::Application.routes.draw do
 
+  resources :marks
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,7 +1,3 @@
-/* DO NOT MODIFY. This file was compiled Mon, 22 Aug 2011 21:34:48 GMT from
- * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-view.coffee
- */
-
 (function() {
   var gc;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {

@@ -1,7 +1,3 @@
-/* DO NOT MODIFY. This file was compiled Mon, 22 Aug 2011 21:27:17 GMT from
- * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-controller.coffee
- */
-
 (function() {
   var gc;
   var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) {
@@ -20,7 +16,6 @@
       PagesController.__super__.constructor.apply(this, arguments);
     }
     PagesController.prototype.routes = {
-      "": "index",
       "pages/:page": "load_page"
     };
     PagesController.prototype.load_page = function(page) {
