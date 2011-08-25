@@ -334,7 +334,7 @@ p {
   top: 0;
 }
 
-/* line 1, ../../app/stylesheets/partials/_custom.sass */
+/* line 2, ../../app/stylesheets/partials/_custom.sass */
 .button {
   font-size: 18px;
   background: #ececec;
@@ -348,21 +348,21 @@ p {
   margin-right: 5px;
   clear: both;
 }
-/* line 13, ../../app/stylesheets/partials/_custom.sass */
+/* line 14, ../../app/stylesheets/partials/_custom.sass */
 .button:hover {
   cursor: pointer;
   background: #cccccc;
 }
-/* line 16, ../../app/stylesheets/partials/_custom.sass */
+/* line 17, ../../app/stylesheets/partials/_custom.sass */
 .button#split {
   display: none;
 }
-/* line 18, ../../app/stylesheets/partials/_custom.sass */
+/* line 19, ../../app/stylesheets/partials/_custom.sass */
 .button#end {
   display: none;
 }
 
-/* line 20, ../../app/stylesheets/partials/_custom.sass */
+/* line 21, ../../app/stylesheets/partials/_custom.sass */
 .timer_time {
   background: #888888;
   color: #ececec;
@@ -372,7 +372,7 @@ p {
   margin-bottom: 5px;
 }
 
-/* line 27, ../../app/stylesheets/partials/_custom.sass */
+/* line 28, ../../app/stylesheets/partials/_custom.sass */
 .mark {
   font-size: 14px;
   background: #ececec;
@@ -387,7 +387,7 @@ p {
   border-radius: 5px;
 }
 
-/* line 35, ../../app/stylesheets/partials/_custom.sass */
+/* line 36, ../../app/stylesheets/partials/_custom.sass */
 #main_nav {
   background: url(img/nav.png) left top no-repeat;
   width: 349px;
@@ -397,32 +397,32 @@ p {
   top: 5px;
   left: 5px;
 }
-/* line 43, ../../app/stylesheets/partials/_custom.sass */
+/* line 44, ../../app/stylesheets/partials/_custom.sass */
 #main_nav h1 {
   margin-top: 24px;
   font-size: 26px;
   color: white;
   font-weight: normal;
 }
-/* line 48, ../../app/stylesheets/partials/_custom.sass */
+/* line 49, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul, #main_nav li {
   list-style: none;
   padding: 0 0 0 5px;
   margin: 0;
 }
-/* line 52, ../../app/stylesheets/partials/_custom.sass */
+/* line 53, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul {
   margin-top: 20px;
 }
-/* line 54, ../../app/stylesheets/partials/_custom.sass */
+/* line 55, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li {
   margin-top: 16px;
 }
-/* line 56, ../../app/stylesheets/partials/_custom.sass */
+/* line 57, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li.why {
   margin-top: 18px;
 }
-/* line 58, ../../app/stylesheets/partials/_custom.sass */
+/* line 59, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a {
   font-family: "Luckiest Guy", cursive;
   font-size: 23px;
@@ -431,54 +431,54 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 65, ../../app/stylesheets/partials/_custom.sass */
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a:hover, #main_nav a.current {
   color: #fdff3e;
 }
 
-/* line 67, ../../app/stylesheets/partials/_custom.sass */
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
 .page {
   padding: 20px 30px;
   color: white;
   font-size: 14px;
 }
-/* line 71, ../../app/stylesheets/partials/_custom.sass */
+/* line 72, ../../app/stylesheets/partials/_custom.sass */
 .page h2 {
   font-size: 26px;
   margin-bottom: 5px;
 }
-/* line 74, ../../app/stylesheets/partials/_custom.sass */
+/* line 75, ../../app/stylesheets/partials/_custom.sass */
 .page h3 {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 78, ../../app/stylesheets/partials/_custom.sass */
+/* line 79, ../../app/stylesheets/partials/_custom.sass */
 .page ul {
   width: 400px;
   margin: 0;
   padding: 0;
   margin-left: 25px;
 }
-/* line 83, ../../app/stylesheets/partials/_custom.sass */
+/* line 84, ../../app/stylesheets/partials/_custom.sass */
 .page ul li {
   padding-top: 5px;
 }
 
-/* line 87, ../../app/stylesheets/partials/_custom.sass */
+/* line 88, ../../app/stylesheets/partials/_custom.sass */
 #pages_container {
   width: 980px;
   margin: 0 auto;
   padding-top: 170px;
 }
-/* line 91, ../../app/stylesheets/partials/_custom.sass */
+/* line 92, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #what_page {
   margin-left: 100px;
   width: 440px;
   background: url(img/sign.png) left top no-repeat;
   height: 387px;
 }
-/* line 96, ../../app/stylesheets/partials/_custom.sass */
+/* line 97, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #how_page {
   height: 387px;
   width: 400px;
@@ -486,7 +486,7 @@ p {
   float: right;
   background: url(img/sign.png) left top no-repeat;
 }
-/* line 102, ../../app/stylesheets/partials/_custom.sass */
+/* line 103, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #why_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
@@ -494,7 +494,7 @@ p {
   clear: both;
   margin-top: 50px;
 }
-/* line 108, ../../app/stylesheets/partials/_custom.sass */
+/* line 109, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #who_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
