@@ -20,7 +20,7 @@
     };
     PagesController.prototype.load_page = function(page) {
       return gc.App.Main.views.push(new gc.Views.PagesView({
-        el: $('#main'),
+        el: $('#marks'),
         page: page
       }));
     };
