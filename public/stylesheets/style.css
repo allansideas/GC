@@ -334,51 +334,92 @@ p {
   top: 0;
 }
 
-/* line 2, ../../app/stylesheets/partials/_custom.sass */
+/* line 1, ../../app/stylesheets/partials/_custom.sass */
+#mobile {
+  width: 100%;
+}
+/* line 3, ../../app/stylesheets/partials/_custom.sass */
+#mobile #marks {
+  padding: 20px;
+}
+
+/* line 5, ../../app/stylesheets/partials/_custom.sass */
 .button {
   font-size: 18px;
+  font-weight: bold;
   background: #ececec;
   border: solid 1px #cccccc;
   text-align: center;
-  height: 30px;
-  line-height: 30px;
-  width: 100px;
+  height: 40px;
+  line-height: 40px;
   display: block;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  margin-bottom: 10px;
   clear: both;
-}
-/* line 14, ../../app/stylesheets/partials/_custom.sass */
-.button:hover {
-  cursor: pointer;
-  background: #cccccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
 }
 /* line 17, ../../app/stylesheets/partials/_custom.sass */
-.button#split {
-  display: none;
+.button:active {
+  cursor: pointer;
+  background: #cccccc;
+  border: solid 3px #333333;
 }
-/* line 19, ../../app/stylesheets/partials/_custom.sass */
+/* line 21, ../../app/stylesheets/partials/_custom.sass */
+.button#start {
+  color: white;
+  background: #075805;
+}
+/* line 24, ../../app/stylesheets/partials/_custom.sass */
+.button#split {
+  color: white;
+  display: none;
+  background: #232352;
+}
+/* line 28, ../../app/stylesheets/partials/_custom.sass */
 .button#end {
+  color: white;
+  background: #8c0b0b;
   display: none;
 }
 
-/* line 21, ../../app/stylesheets/partials/_custom.sass */
+/* line 32, ../../app/stylesheets/partials/_custom.sass */
 .timer_time {
   background: #888888;
-  color: #ececec;
-  font-size: 16px;
-  width: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  height: 40px;
+  line-height: 40px;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 11px;
+}
+/* line 41, ../../app/stylesheets/partials/_custom.sass */
+.timer_time.start {
+  background: #c8fcc6;
+  color: #333333;
+}
+/* line 44, ../../app/stylesheets/partials/_custom.sass */
+.timer_time.split {
+  background: #c2c2e5;
+  color: #333333;
+}
+/* line 47, ../../app/stylesheets/partials/_custom.sass */
+.timer_time.end {
+  background: #f79f9f;
+  color: #333333;
 }
 
-/* line 28, ../../app/stylesheets/partials/_custom.sass */
+/* line 50, ../../app/stylesheets/partials/_custom.sass */
 .mark {
+  height: 40px;
   font-size: 14px;
+  text-align: center;
   background: #ececec;
-  width: 80px;
-  margin-bottom: 5px;
-  padding: 10px;
+  margin-bottom: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -387,7 +428,27 @@ p {
   border-radius: 5px;
 }
 
-/* line 36, ../../app/stylesheets/partials/_custom.sass */
+/* line 58, ../../app/stylesheets/partials/_custom.sass */
+#timer_buttons, #show_time {
+  clear: left;
+  width: 48%;
+  float: left;
+}
+
+/* line 62, ../../app/stylesheets/partials/_custom.sass */
+#marks_list {
+  clear: left;
+  width: 48%;
+  float: left;
+}
+
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
+#timers {
+  width: 48%;
+  float: right;
+}
+
+/* line 69, ../../app/stylesheets/partials/_custom.sass */
 #main_nav {
   background: url(img/nav.png) left top no-repeat;
   width: 349px;
@@ -397,32 +458,32 @@ p {
   top: 5px;
   left: 5px;
 }
-/* line 44, ../../app/stylesheets/partials/_custom.sass */
+/* line 77, ../../app/stylesheets/partials/_custom.sass */
 #main_nav h1 {
   margin-top: 24px;
   font-size: 26px;
   color: white;
   font-weight: normal;
 }
-/* line 49, ../../app/stylesheets/partials/_custom.sass */
+/* line 82, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul, #main_nav li {
   list-style: none;
   padding: 0 0 0 5px;
   margin: 0;
 }
-/* line 53, ../../app/stylesheets/partials/_custom.sass */
+/* line 86, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul {
   margin-top: 20px;
 }
-/* line 55, ../../app/stylesheets/partials/_custom.sass */
+/* line 88, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li {
   margin-top: 16px;
 }
-/* line 57, ../../app/stylesheets/partials/_custom.sass */
+/* line 90, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li.why {
   margin-top: 18px;
 }
-/* line 59, ../../app/stylesheets/partials/_custom.sass */
+/* line 92, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a {
   font-family: "Luckiest Guy", cursive;
   font-size: 23px;
@@ -431,54 +492,54 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 66, ../../app/stylesheets/partials/_custom.sass */
+/* line 99, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a:hover, #main_nav a.current {
   color: #fdff3e;
 }
 
-/* line 68, ../../app/stylesheets/partials/_custom.sass */
+/* line 101, ../../app/stylesheets/partials/_custom.sass */
 .page {
   padding: 20px 30px;
   color: white;
   font-size: 14px;
 }
-/* line 72, ../../app/stylesheets/partials/_custom.sass */
+/* line 105, ../../app/stylesheets/partials/_custom.sass */
 .page h2 {
   font-size: 26px;
   margin-bottom: 5px;
 }
-/* line 75, ../../app/stylesheets/partials/_custom.sass */
+/* line 108, ../../app/stylesheets/partials/_custom.sass */
 .page h3 {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 79, ../../app/stylesheets/partials/_custom.sass */
+/* line 112, ../../app/stylesheets/partials/_custom.sass */
 .page ul {
   width: 400px;
   margin: 0;
   padding: 0;
   margin-left: 25px;
 }
-/* line 84, ../../app/stylesheets/partials/_custom.sass */
+/* line 117, ../../app/stylesheets/partials/_custom.sass */
 .page ul li {
   padding-top: 5px;
 }
 
-/* line 88, ../../app/stylesheets/partials/_custom.sass */
+/* line 121, ../../app/stylesheets/partials/_custom.sass */
 #pages_container {
   width: 980px;
   margin: 0 auto;
   padding-top: 170px;
 }
-/* line 92, ../../app/stylesheets/partials/_custom.sass */
+/* line 125, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #what_page {
   margin-left: 100px;
   width: 440px;
   background: url(img/sign.png) left top no-repeat;
   height: 387px;
 }
-/* line 97, ../../app/stylesheets/partials/_custom.sass */
+/* line 130, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #how_page {
   height: 387px;
   width: 400px;
@@ -486,7 +547,7 @@ p {
   float: right;
   background: url(img/sign.png) left top no-repeat;
 }
-/* line 103, ../../app/stylesheets/partials/_custom.sass */
+/* line 136, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #why_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
@@ -494,7 +555,7 @@ p {
   clear: both;
   margin-top: 50px;
 }
-/* line 109, ../../app/stylesheets/partials/_custom.sass */
+/* line 142, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #who_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
@@ -502,6 +563,11 @@ p {
   clear: both;
   float: right;
   margin-top: 250px;
+}
+
+/* line 68, ../../app/stylesheets/partials/_page.sass */
+footer {
+  clear: both;
 }
 
 /*/mediaquery*/

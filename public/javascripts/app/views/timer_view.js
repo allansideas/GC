@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 24 Aug 2011 12:21:10 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 21:47:41 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/timer_view.coffee
  */
 
@@ -26,7 +26,11 @@
     };
     TimerView.prototype.getTime = function() {
       var ago;
-      ago = _.date(this.options.from.attributes.time).fromNow(false, true) * -1;
+      if (this.options.end_time) {
+        ago = _.date(this.options.from.attributes.time).from(_.date(this.options.end_time.time), true, true) * -1;
+      } else {
+        ago = _.date(this.options.from.attributes.time).fromNow(false, true) * -1;
+      }
       this.mins = Math.floor((ago / 1000) / 60);
       return this.seconds = Math.floor((ago / 1000) % 60);
     };

@@ -1,38 +1,71 @@
-
+#mobile
+  width: 100%
+  #marks
+    padding: 20px
 .button
   font-size: 18px
+  font-weight: bold
   background: #ececec
   border: solid 1px #ccc
   text-align: center
-  height: 30px
-  line-height: 30px
-  width: 100px
+  height: 40px
+  line-height: 40px
   display: block
-  margin-bottom: 5px
-  margin-right: 5px
+  margin-bottom: 10px
   clear: both
-  &:hover
+  +border-radius(5px)
+  &:active
     cursor: pointer
     background: #ccc
+    border: solid 3px #333
+  &#start
+    color: #fff
+    background: #075805
   &#split
+    color: #fff
     display: none
+    background: #232352
   &#end
+    color: #fff
+    background: #8c0b0b
     display: none
 .timer_time
   background: #888
-  color: #ececec
-  font-size: 16px
-  width: 100px
+  font-size: 18px
+  font-weight: bold
+  color: #fff
+  height: 40px
+  line-height: 40px
   text-align: center
-  margin-bottom: 5px
+  margin-bottom: 11px
+  &.start
+    background: lighten(#075805, 70%)
+    color: #333
+  &.split
+    background: lighten(#232352, 60%)
+    color: #333
+  &.end
+    background: lighten(#8c0b0b, 50%)
+    color: #333
 .mark
+  height: 40px
   font-size: 14px
+  text-align: center
   background: #ececec
-  width: 80px
-  margin-bottom: 5px
-  padding: 10px
+  margin-bottom: 10px
   +border-radius(5px)
   
+#timer_buttons, #show_time
+  clear: left
+  width: 48%
+  float: left
+#marks_list
+  clear: left
+  width: 48%
+  float: left
+#timers
+  width: 48%
+  float: right
 #main_nav
   background: url(img/nav.png) left top no-repeat
   width: 349px

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 24 Aug 2011 12:26:16 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 21:58:56 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/marks/index_view.coffee
  */
 
@@ -21,7 +21,8 @@
     IndexView.prototype.events = {
       'click #start': 'start',
       'click #show_time': 'showTime',
-      'click #split': 'split'
+      'click #split': 'split',
+      'click #end': 'end'
     };
     IndexView.prototype.initialize = function() {
       _.bindAll(this, 'addOne', 'addAll');
@@ -34,7 +35,7 @@
       now = new Date().getTime();
       this.start_time = this.options.marks.create({
         time: now,
-        m_type: "begin"
+        m_type: "start"
       });
       return this.switchButton(['split', 'end']);
     };
@@ -55,25 +56,51 @@
         time: now,
         m_type: "end"
       });
-      return this.switchButton("start");
+      $('#timer_buttons').hide();
+      $('#show_time').hide();
+      return this.showTime("end");
     };
-    IndexView.prototype.showTime = function() {
-      var split, split_tv, start_tv, _i, _len, _ref, _results;
+    IndexView.prototype.showTime = function(flag) {
+      var end_tv, split, split_tv, start_tv, _i, _j, _len, _len2, _ref, _ref2;
       $('#timers').children().remove();
-      start_tv = new App.Views.Timers.TimerView({
-        from: this.start_time
-      });
-      this.$("#timers").append(start_tv.render().el);
-      _ref = this.splits;
-      _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        split = _ref[_i];
-        split_tv = new App.Views.Timers.TimerView({
-          from: split
+      if (flag === "end") {
+        start_tv = new App.Views.Timers.TimerView({
+          from: this.start_time,
+          end_time: this.end_time
         });
-        _results.push(this.$("#timers").append(split_tv.render().el));
+        this.$("#timers").append(start_tv.render().el);
+        _ref = this.splits;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          split = _ref[_i];
+          split_tv = new App.Views.Timers.TimerView({
+            from: split,
+            end_time: this.end_time
+          });
+          this.$("#timers").append(split_tv.render().el);
+        }
+        end_tv = new App.Views.Timers.TimerView({
+          from: this.end_time,
+          end_time: this.end_time
+        });
+        return this.$("#timers").append(end_tv.render().el);
+      } else {
+        start_tv = new App.Views.Timers.TimerView({
+          from: this.start_time
+        });
+        this.$("#timers").append(start_tv.render().el);
+        _ref2 = this.splits;
+        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
+          split = _ref2[_j];
+          split_tv = new App.Views.Timers.TimerView({
+            from: split
+          });
+          this.$("#timers").append(split_tv.render().el);
+        }
+        end_tv = new App.Views.Timers.TimerView({
+          from: this.end_time
+        });
+        return this.$("#timers").append(end_tv.render().el);
       }
-      return _results;
     };
     IndexView.prototype.createTimerEl = function(from, mins, seconds) {
       return $("#timers").append("<div class='timer_time'>" + from + " " + mins + "m " + seconds + "s</div>");
@@ -81,13 +108,17 @@
     IndexView.prototype.switchButton = function(to_show) {
       var show, _i, _len, _results;
       $('#timer_buttons .button').hide();
-      _results = [];
-      for (_i = 0, _len = to_show.length; _i < _len; _i++) {
-        show = to_show[_i];
-        console.log(show);
-        _results.push($('#' + show).show());
+      if (_.isArray(to_show)) {
+        _results = [];
+        for (_i = 0, _len = to_show.length; _i < _len; _i++) {
+          show = to_show[_i];
+          console.log(show);
+          _results.push($('#' + show).show());
+        }
+        return _results;
+      } else {
+        return $('#' + to_show).show();
       }
-      return _results;
     };
     IndexView.prototype.addAll = function() {
       var mark, _i, _len, _ref;

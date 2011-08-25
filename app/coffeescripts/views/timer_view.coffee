@@ -8,7 +8,10 @@ class App.Views.Timers.TimerView extends Backbone.View
     @getTime()
 
   getTime:()->
-    ago = _.date(@options.from.attributes.time).fromNow(false, true) * -1
+    if @options.end_time 
+      ago = _.date(@options.from.attributes.time).from(_.date(@options.end_time.time), true, true) * -1
+    else
+      ago = _.date(@options.from.attributes.time).fromNow(false, true) * -1
     @mins = Math.floor((ago / 1000) / 60)
     @seconds = Math.floor((ago / 1000) % 60)
     

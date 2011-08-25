@@ -5,6 +5,7 @@ class App.Views.Marks.IndexView extends Backbone.View
     'click #start' : 'start'
     'click #show_time' : 'showTime'
     'click #split' : 'split'
+    'click #end' : 'end'
 
   initialize: () ->
     _.bindAll(this, 'addOne', 'addAll')
@@ -15,7 +16,7 @@ class App.Views.Marks.IndexView extends Backbone.View
    
   start: () ->
     now = new Date().getTime()
-    @start_time = @options.marks.create {time : now, m_type : "begin"}
+    @start_time = @options.marks.create {time : now, m_type : "start"}
     @switchButton(['split', 'end'])
     #@addOne(@start_time)
 
@@ -28,16 +29,29 @@ class App.Views.Marks.IndexView extends Backbone.View
   end: () ->
     now = new Date().getTime()
     @end_time = @options.marks.create {time : now, m_type : "end"}
-    @switchButton("start")
+    $('#timer_buttons').hide()
+    $('#show_time').hide()
+    @showTime("end")
     #@addOne(@start_time)
 
-  showTime: ()->
+  showTime: (flag)->
     $('#timers').children().remove()
-    start_tv = new App.Views.Timers.TimerView({from : @start_time})
-    @$("#timers").append(start_tv.render().el)
-    for split in @splits
-      split_tv = new App.Views.Timers.TimerView({from : split})
-      @$("#timers").append(split_tv.render().el)
+    if flag == "end"
+      start_tv = new App.Views.Timers.TimerView({from : @start_time, end_time : @end_time})
+      @$("#timers").append(start_tv.render().el)
+      for split in @splits
+        split_tv = new App.Views.Timers.TimerView({from : split, end_time : @end_time})
+        @$("#timers").append(split_tv.render().el)
+      end_tv = new App.Views.Timers.TimerView({from : @end_time, end_time : @end_time})
+      @$("#timers").append(end_tv.render().el)
+    else
+      start_tv = new App.Views.Timers.TimerView({from : @start_time})
+      @$("#timers").append(start_tv.render().el)
+      for split in @splits
+        split_tv = new App.Views.Timers.TimerView({from : split})
+        @$("#timers").append(split_tv.render().el)
+      end_tv = new App.Views.Timers.TimerView({from : @end_time})
+      @$("#timers").append(end_tv.render().el)
 
   createTimerEl: (from, mins, seconds)->
     $("#timers").append("<div class='timer_time'>"+from+" "+ mins+"m "+seconds+"s</div>")
@@ -45,9 +59,12 @@ class App.Views.Marks.IndexView extends Backbone.View
 
   switchButton: (to_show) ->
     $('#timer_buttons .button').hide()
-    for show in to_show
-      console.log show
-      $('#'+show).show()
+    if _.isArray(to_show)
+      for show in to_show
+        console.log show
+        $('#'+show).show()
+    else
+      $('#'+to_show).show()
 
   addAll: () ->
     for mark in @options.marks.models

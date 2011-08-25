@@ -1,13 +1,14 @@
-#marks
-  #show_time.button Show time
-  #timers
-  #timer_buttons
-    #start.button Start
-    #split.button Split
-    #end.button End
-  #marks_list
-:javascript
-  console.log(#{@marks.to_json});
-  window.controller = new App.Controllers.MarksController({marks: #{@marks.to_json}});                                                                                                                   
-  Backbone.history.start();
+#mobile
+  #marks
+    #timers
+    #show_time.button Show time
+    #timer_buttons
+      #start.button Start
+      #split.button Split
+      #end.button End
+    #marks_list
+  :javascript
+    console.log(#{@marks.to_json});
+    window.controller = new App.Controllers.MarksController({marks: #{@marks.to_json}});                                                                                                                   
+    Backbone.history.start();
 
