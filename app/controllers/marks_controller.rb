@@ -1,4 +1,5 @@
 class MarksController < InheritedResources::Base
+  before_filter :authenticate_user!
   layout 'application'
   respond_to :html, :json
   #def index

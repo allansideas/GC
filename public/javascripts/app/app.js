@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 00:25:52 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 29 Aug 2011 21:23:55 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/app.coffee
  */
 
@@ -6,7 +6,8 @@
   window.App = {
     Models: {},
     Collections: {},
-    Controllers: {},
-    Views: {}
+    Routers: {},
+    Views: {},
+    User: {}
   };
 }).call(this);

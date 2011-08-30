@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 00:25:53 GMT from
+/* DO NOT MODIFY. This file was compiled Mon, 29 Aug 2011 06:57:32 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/marks/show_view.coffee
  */
 
@@ -19,10 +19,10 @@
       ShowView.__super__.constructor.apply(this, arguments);
     }
     ShowView.prototype.template = function() {
-      return JST["show"];
+      return JST["marks/show"];
     };
     ShowView.prototype.render = function() {
-      $(this.el).html(this.template()(this.options.model.toJSON()));
+      $(this.el).html(this.template()(this.options.model.toBackboneJSON()));
       return this;
     };
     return ShowView;

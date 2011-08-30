@@ -1,3 +1,4 @@
 class Mark < ActiveRecord::Base
-  attr_accessible :time, :m_type
+  belongs_to :activity_instance
+  attr_accessible :activity_instance_id, :time, :m_type, :point_id
 end

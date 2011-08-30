@@ -2,7 +2,8 @@
   window.App = {
     Models: {},
     Collections: {},
-    Controllers: {},
-    Views: {}
+    Routers: {},
+    Views: {},
+    User: {}
   };
 }).call(this);

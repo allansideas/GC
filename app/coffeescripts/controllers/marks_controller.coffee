@@ -1,24 +1,27 @@
-class App.Controllers.MarksController extends Backbone.Controller
+class App.Routers.MarksRouter extends Backbone.Router
   initialize: (options) ->
     @marks = new App.Collections.MarksCollection()
-    @marks.refresh options.marks
+    @marks.reset options.marks
     
   routes:
-    "/index": "index"
-    "/:id": "show"
     ".*": "index"
+    "/qr/:code": "namedMark"
+    "/custom_split": "customSplit" 
     
-  newMark: ->
-    @view = new App.Views.Marks.NewView(model: new @marks.model())
-    $("#marks").html(@view.render().el)
-    
-  index: ->
+  index: (options)->
     console.log "index"
     @view = new App.Views.Marks.IndexView
       marks: @marks
       el: $('#main')
+    @end_model = {}
+    for mark in @marks.models
+      if mark.attributes.m_type == "end"
+        @end_model = mark
+    @view.setupMarks(@end_model)
     
-  show:(id) ->
-    marks = @marks.get(id)
-    @view = new App.Views.Marks.ShowView(model : mark)
-    $("#marks").html(@view.render().el)
+  namedMark: (code)->
+    @view = new App.Views.Marks.IndexView
+      marks: @marks
+      el: $('#main')
+      code: code
+

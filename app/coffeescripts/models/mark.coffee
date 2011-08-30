@@ -1,4 +1,5 @@
 class App.Models.Mark extends Backbone.Model
+  name: "mark"
   initialize: ()->
     @.prettyTime()
   url: "/marks"

@@ -1,0 +1,18 @@
+#mobile
+  #point.screen
+  #activity.screen
+  #activity_instance.screen
+
+:javascript
+  $(document).ready(function(){
+  window.controller = new App.Routers.PointsRouter(
+  {activities: #{@point.activities.to_json(:include => :route)}, 
+  point: #{@point.to_json}, 
+  user : #{current_user.to_json(:only => [:id])},
+  activity_instances : #{@activity_instances.to_json}
+  });
+  Backbone.history.start();
+  });
+
+
+

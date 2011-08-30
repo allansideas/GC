@@ -1,6 +1,16 @@
 Gchamp::Application.routes.draw do
+  devise_for :users
 
   resources :marks
+  resources :activities
+  resources :points
+  resources :routes do
+    collection do
+      get :route_by_activity_id
+    end
+  end
+  resources :activity_instances
+  #match 'marks/:mark_name' => 'marks#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

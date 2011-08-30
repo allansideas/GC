@@ -1,0 +1,113 @@
+App.Views.Marks ||= {}
+
+class App.Views.Marks.IndexView extends Backbone.View
+  events:
+    'click #start' : 'start'
+    'click #show_time' : 'showTime'
+    'click #split' : 'split'
+    'click #end' : 'end'
+
+  initialize: () ->
+    _.bindAll(this, 'addOne', 'addAll')
+    @options.marks.bind('add', @addOne, @)
+    @addAll()
+    @splits = []
+    if @options.code
+      @split()
+      @setupMarks()
+
+    #@options.marks.bind('refresh', @addAll())
+   
+  start: () ->
+    console.log "start"
+    now = new Date().getTime()
+    if @options.code
+      @start_time = @options.marks.create {time : now, m_type : "start", qr_name: @options.code}
+    else
+      @start_time = @options.marks.create {time : now, m_type : "start"}
+    @switchButton(['split', 'end'])
+    @showTime()
+      #@addOne(@start_time)
+
+  split: () ->
+    now = new Date().getTime()
+    console.log "SPLIT"
+    if @options.code
+      if @start_time
+        @split_time = @options.marks.create {time : now, m_type : "split", qr_name: @options.code}
+        @splits.push @split_time
+        @switchButton(['split', 'end'])
+        @showTime()
+      else
+        @start()
+    else
+      @split_time = @options.marks.create {time : now, m_type : "split"}
+      @splits.push @split_time
+      @switchButton(['split', 'end'])
+      @showTime()
+    
+  end: () ->
+    now = new Date().getTime()
+    @end_time = @options.marks.create {time : now, m_type : "end"}
+    $('#timer_buttons').hide()
+    $('#show_time').hide()
+    @showTime("end")
+    #@addOne(@start_time)
+
+  setupMarks: ->
+    for mark in @options.marks.models
+      console.log mark
+      if mark.attributes.m_type == "start"
+        @start_time = @mark
+      if mark.attributes.m_type == "split"
+        @splits.push mark
+      if mark.attributes.m_type == "end"
+        @end_time = mark
+    console.log @splits
+    @showTime()
+
+  showTime: (flag)->
+    $('#timers').children().remove()
+    if flag == "end"
+      start_tv = new App.Views.Timers.TimerView({from : @start_time, end_time : @end_time})
+      @$("#timers").append(start_tv.render().el)
+      for split in @splits
+        split_tv = new App.Views.Timers.TimerView({from : split, end_time : @end_time})
+        @$("#timers").append(split_tv.render().el)
+      end_tv = new App.Views.Timers.TimerView({from : @end_time, end_time : @end_time})
+      @$("#timers").append(end_tv.render().el)
+    else
+      if @start_time
+        start_tv = new App.Views.Timers.TimerView({from : @start_time})
+        @$("#timers").append(start_tv.render().el)
+      if @splits
+        for split in @splits
+          split_tv = new App.Views.Timers.TimerView({from : split})
+          @$("#timers").append(split_tv.render().el)
+      if @end_time
+        end_tv = new App.Views.Timers.TimerView({from : @end_time})
+        @$("#timers").append(end_tv.render().el)
+
+  switchButton: (to_show) ->
+    $('#timer_buttons .button').hide()
+    if _.isArray(to_show)
+      for show in to_show
+        $('#'+show).show()
+    else
+      $('#'+to_show).show()
+
+  addAll: () ->
+    for mark in @options.marks.models
+      @addOne(mark)
+    @fadeIn()
+  
+  addOne: (mark) ->
+    mv = new App.Views.Marks.MarkView({model : mark})
+    @$("#marks_list").append(mv.render().el)
+
+  fadeIn: () ->
+    for mark, i in $('.mark')
+      $mark = $(mark)
+      $mark.fadeTo(0, 0).delay(i * 40).fadeTo(100, 1)
+
+       

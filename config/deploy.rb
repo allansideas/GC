@@ -21,7 +21,7 @@ end
 task :staging do
   set :deploy_to, "/home/#{application}/staging"
   set :branch, "master"
-  set :rails_env, 'staging'
+  set :rails_env, 'development'
   role :app, "74.207.249.233"
   role :web, "74.207.249.233"
   role :db,  "74.207.249.233", :primary => true

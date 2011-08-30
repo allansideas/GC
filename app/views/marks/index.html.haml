@@ -7,8 +7,14 @@
       #split.button Split
       #end.button End
     #marks_list
+#qr
+  %p Start
+  <img src="http://qrcode.kaywa.com/img.php?s=8&d=http%3A%2F%2F192.168.0.8%3A3000%2Fmarks%23%2Fqr%2FGCstart" alt="qrcode"  />
+  %p split
+  <img src="http://qrcode.kaywa.com/img.php?s=8&d=http%3A%2F%2F192.168.0.8%3A3000%2Fmarks%23%2Fqr%2FGCsplit" alt="qrcode"  />
+  %p split
+  <img src="http://qrcode.kaywa.com/img.php?s=8&d=http%3A%2F%2F192.168.0.8%3A3000%2Fmarks%23%2Fqr%2FGCsplit1" alt="qrcode"  />
   :javascript
-    console.log(#{@marks.to_json});
-    window.controller = new App.Controllers.MarksController({marks: #{@marks.to_json}});                                                                                                                   
+    window.controller = new App.Routers.MarksRouter({marks: #{@marks.to_json}});                                                                                                                   
     Backbone.history.start();
 

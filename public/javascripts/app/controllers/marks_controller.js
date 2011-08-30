@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 00:25:53 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 26 Aug 2011 02:46:39 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/controllers/marks_controller.coffee
  */
 
@@ -11,41 +11,44 @@
     child.__super__ = parent.prototype;
     return child;
   };
-  App.Controllers.MarksController = (function() {
-    __extends(MarksController, Backbone.Controller);
-    function MarksController() {
-      MarksController.__super__.constructor.apply(this, arguments);
+  App.Routers.MarksRouter = (function() {
+    __extends(MarksRouter, Backbone.Router);
+    function MarksRouter() {
+      MarksRouter.__super__.constructor.apply(this, arguments);
     }
-    MarksController.prototype.initialize = function(options) {
+    MarksRouter.prototype.initialize = function(options) {
       this.marks = new App.Collections.MarksCollection();
-      return this.marks.refresh(options.marks);
+      return this.marks.reset(options.marks);
     };
-    MarksController.prototype.routes = {
-      "/index": "index",
-      "/:id": "show",
-      ".*": "index"
+    MarksRouter.prototype.routes = {
+      ".*": "index",
+      "/qr/:code": "namedMark",
+      "/custom_split": "customSplit"
     };
-    MarksController.prototype.newMark = function() {
-      this.view = new App.Views.Marks.NewView({
-        model: new this.marks.model()
-      });
-      return $("#marks").html(this.view.render().el);
-    };
-    MarksController.prototype.index = function() {
+    MarksRouter.prototype.index = function(options) {
+      var mark, _i, _len, _ref;
       console.log("index");
-      return this.view = new App.Views.Marks.IndexView({
+      this.view = new App.Views.Marks.IndexView({
         marks: this.marks,
         el: $('#main')
       });
+      this.end_model = {};
+      _ref = this.marks.models;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        mark = _ref[_i];
+        if (mark.attributes.m_type === "end") {
+          this.end_model = mark;
+        }
+      }
+      return this.view.setupMarks(this.end_model);
     };
-    MarksController.prototype.show = function(id) {
-      var marks;
-      marks = this.marks.get(id);
-      this.view = new App.Views.Marks.ShowView({
-        model: mark
+    MarksRouter.prototype.namedMark = function(code) {
+      return this.view = new App.Views.Marks.IndexView({
+        marks: this.marks,
+        el: $('#main'),
+        code: code
       });
-      return $("#marks").html(this.view.render().el);
     };
-    return MarksController;
+    return MarksRouter;
   })();
 }).call(this);

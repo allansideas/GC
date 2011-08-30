@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 21:58:56 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 27 Aug 2011 11:52:27 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/marks/index_view.coffee
  */
 
@@ -19,35 +19,56 @@
       IndexView.__super__.constructor.apply(this, arguments);
     }
     IndexView.prototype.events = {
-      'click #start': 'start',
-      'click #show_time': 'showTime',
-      'click #split': 'split',
+      'click #show_time': 'setupMarks',
       'click #end': 'end'
     };
     IndexView.prototype.initialize = function() {
       _.bindAll(this, 'addOne', 'addAll');
-      this.options.marks.bind('add', this.addOne, this);
+      this.options.marks.bind('add', this.setupMarks, this);
       this.addAll();
-      return this.splits = [];
+      this.splits = [];
+      this.started = false;
+      if (this.options.code) {
+        return this.split();
+      }
     };
     IndexView.prototype.start = function() {
       var now;
       now = new Date().getTime();
-      this.start_time = this.options.marks.create({
-        time: now,
-        m_type: "start"
-      });
-      return this.switchButton(['split', 'end']);
+      if (this.options.code) {
+        this.start_time = this.options.marks.create({
+          time: now,
+          m_type: "start",
+          name: this.options.code
+        });
+        return this.switchButton(['split', 'end']);
+      }
     };
     IndexView.prototype.split = function() {
-      var now;
+      var m, now, _i, _len, _ref;
       now = new Date().getTime();
-      this.split_time = this.options.marks.create({
-        time: now,
-        m_type: "split"
-      });
-      this.splits.push(this.split_time);
-      return this.showTime();
+      this.started = false;
+      if (this.options.code) {
+        _ref = this.options.marks.models;
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+          m = _ref[_i];
+          if (m.attributes.m_type === "start") {
+            this.started = true;
+          }
+        }
+        if (this.started !== false) {
+          console.log("split");
+          this.split_time = this.options.marks.create({
+            time: now,
+            m_type: "split",
+            name: this.options.code
+          });
+          this.splits.push(this.split_time);
+          return this.switchButton(['split', 'end']);
+        } else {
+          return this.start();
+        }
+      }
     };
     IndexView.prototype.end = function() {
       var now;
@@ -57,53 +78,35 @@
         m_type: "end"
       });
       $('#timer_buttons').hide();
-      $('#show_time').hide();
-      return this.showTime("end");
+      return $('#show_time').hide();
     };
-    IndexView.prototype.showTime = function(flag) {
-      var end_tv, split, split_tv, start_tv, _i, _j, _len, _len2, _ref, _ref2;
+    IndexView.prototype.setupMarks = function() {
+      var end_tv, mark, split_tv, start_tv, _i, _len, _ref, _results;
       $('#timers').children().remove();
-      if (flag === "end") {
-        start_tv = new App.Views.Timers.TimerView({
-          from: this.start_time,
-          end_time: this.end_time
-        });
-        this.$("#timers").append(start_tv.render().el);
-        _ref = this.splits;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          split = _ref[_i];
+      _ref = this.options.marks.models;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        mark = _ref[_i];
+        if (mark.attributes.m_type === "start") {
+          this.start_time = mark;
+          start_tv = new App.Views.Timers.TimerView({
+            from: mark
+          });
+          this.$("#timers").append(start_tv.render().el);
+        }
+        if (mark.attributes.m_type === "split") {
+          this.splits.push(mark);
           split_tv = new App.Views.Timers.TimerView({
-            from: split,
-            end_time: this.end_time
+            from: mark
           });
           this.$("#timers").append(split_tv.render().el);
         }
-        end_tv = new App.Views.Timers.TimerView({
-          from: this.end_time,
-          end_time: this.end_time
-        });
-        return this.$("#timers").append(end_tv.render().el);
-      } else {
-        start_tv = new App.Views.Timers.TimerView({
-          from: this.start_time
-        });
-        this.$("#timers").append(start_tv.render().el);
-        _ref2 = this.splits;
-        for (_j = 0, _len2 = _ref2.length; _j < _len2; _j++) {
-          split = _ref2[_j];
-          split_tv = new App.Views.Timers.TimerView({
-            from: split
-          });
-          this.$("#timers").append(split_tv.render().el);
-        }
-        end_tv = new App.Views.Timers.TimerView({
-          from: this.end_time
-        });
-        return this.$("#timers").append(end_tv.render().el);
+        _results.push(mark.attributes.m_type === "end" ? (this.end_model = mark, end_tv = new App.Views.Timers.TimerView({
+          from: mark,
+          end_time: this.end_model ? this.end_model : void 0
+        }), this.$("#timers").append(end_tv.render().el)) : void 0);
       }
-    };
-    IndexView.prototype.createTimerEl = function(from, mins, seconds) {
-      return $("#timers").append("<div class='timer_time'>" + from + " " + mins + "m " + seconds + "s</div>");
+      return _results;
     };
     IndexView.prototype.switchButton = function(to_show) {
       var show, _i, _len, _results;
@@ -112,7 +115,6 @@
         _results = [];
         for (_i = 0, _len = to_show.length; _i < _len; _i++) {
           show = to_show[_i];
-          console.log(show);
           _results.push($('#' + show).show());
         }
         return _results;

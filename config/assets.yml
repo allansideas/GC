@@ -5,11 +5,13 @@ template_function: "Handlebars.compile"
 
 javascripts:
   common:
-    - public/javascripts/jquery.js
-    - public/javascripts/rails.js
     - public/javascripts/underscore.js
     - public/javascripts/underscore.date.min.js
+    - public/javascripts/json2.js
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery_ujs.js
     - public/javascripts/backbone.js
+    - public/javascripts/rails.js
     - public/javascripts/handlebars.js
       
   application:

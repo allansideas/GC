@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 23 Aug 2011 05:44:37 GMT from
+/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 22:46:45 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/pages-controller.coffee
  */
 

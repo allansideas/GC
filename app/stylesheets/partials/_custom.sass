@@ -1,23 +1,124 @@
-#mobile
-  width: 100%
-  #marks
-    padding: 20px
-.button
-  font-size: 18px
-  font-weight: bold
-  background: #ececec
-  border: solid 1px #ccc
-  text-align: center
-  height: 40px
-  line-height: 40px
+=nice-button($base-color)
+  +background-clip('padding-box')
+  border-width: 1px
+  +border-radius(6px)
+  border-style: solid
+  color: white
   display: block
-  margin-bottom: 10px
-  clear: both
-  +border-radius(5px)
+  padding: 12px 15px
+  text-align: center
+  text-decoration: none
+  font-size: 24px
+  font-weight: bold
+  +opacity(0.9)
+  &:hover
+    .title
+      +opacity(1)
+    .subtitle
+      +opacity(0.8)
   &:active
-    cursor: pointer
-    background: #ccc
-    border: solid 3px #333
+    padding: 13px 15px 11px
+  @if $base-color != none
+    +color-button($base-color)
+
+=nice-button-small($base-color)
+  +background-clip('padding-box')
+  border-width: 1px
+  +border-radius(6px)
+  border-style: solid
+  color: white
+  display: block
+  width: 100px
+  padding: 5px 10px
+  text-align: center
+  text-decoration: none
+  font-size: 16px
+  font-weight: bold
+  +opacity(0.9)
+  &:hover
+    .title
+      +opacity(1)
+    .subtitle
+      +opacity(0.8)
+  &:active
+    padding: 5px 10px
+  @if $base-color != none
+    +color-button($base-color)
+
+=color-button($base-color)
+  $dark-color: darken($base-color, 10%)
+  $light-color: lighten($base-color, 10%)
+  $border-color: darken($base-color, 20%)
+  $light-border-color: lighten($base-color, 0%)
+  $highlight-color: transparentize(desaturate(lighten($base-color, 40%), 50%), 0.5)
+  $shadow-color: darken($base-color, 15%)
+  $text-shadow-color: darken($base-color, 15%)
+  background-color: $base-color
+  +linear-gradient(color-stops($light-color, $base-color, $dark-color))
+  border-color: $border-color
+  border-left-color: $light-border-color
+  border-top-color: $light-border-color
+  +box-shadow($highlight-color, 1px, 1px, 0, 0, inset)
+  color: white
+  +text-shadow($text-shadow-color, 0, 1px, 2px)
+  &:hover, &:focus
+    +linear-gradient(color-stops(lighten($light-color, 5%), lighten($base-color, 5%), $dark-color))
+  &:active, &.depressed
+    +linear-gradient(color-stops(desaturate(lighten($dark-color, 5%),10%), desaturate($base-color, 10%)))
+    +box-shadow(none)
+    border-color: $border-color
+
+#point, #activity
+  margin-top: 40px
+#mini_nav
+  position: fixed
+  top: 0
+  left: 0
+  padding: 5px 20px
+  background: #ececec
+  width: 100%
+  border-bottom: solid 2px #888
+#mobile
+  p
+    margin-bottom: 20px
+    font-size: 16px
+  h2
+    width: 100%
+    background: #ddddd3
+    color: #333
+    text-align: center
+    padding: 5px 0
+    border-top: solid 2px darken(#ddddd3, 5%)
+    border-bottom: solid 2px darken(#ddddd3, 5%)
+    font-size: 24px
+    margin-bottom: 20px
+  form
+    width: 100%
+    margin: 0 auto
+    padding: 0
+    p
+      width: 100%
+    label
+      font-size: 18px
+      display: block
+    input, textarea, select
+      +border-radius(6px)
+      border: solid 1px #ccc
+      width: 100%
+      font-size: 24px
+      padding: 8px 0
+      display: block
+    input[type=submit]
+      +nice-button(#74c044)
+    
+.button
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  margin-bottom: 20px
+  &.activity
+    +nice-button(#74c044)
+  &.small
+    +nice-button-small(#555)
+    margin-bottom: 0
   &#start
     color: #fff
     background: #075805
@@ -29,6 +130,14 @@
     color: #fff
     background: #8c0b0b
     display: none
+
+
+
+#qr
+  clear: both
+  img
+    display:block
+    clear: both
 .timer_time
   background: #888
   font-size: 18px
@@ -59,6 +168,7 @@
   clear: left
   width: 48%
   float: left
+
 #marks_list
   clear: left
   width: 48%
