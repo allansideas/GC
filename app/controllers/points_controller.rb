@@ -6,10 +6,12 @@ class PointsController < InheritedResources::Base
   def show
     @point = Point.find(params[:id])
     @activities = @point.activities
-#    if current_user.current_activity_instance?
     @activity_instance = current_user.activity_instance
     @activity = current_user.partaking_in
     @marks = Mark.where("activity_instance_id = ?", current_user.current_activity_instance)
-#    end
+    @all_activity_instances = ActivityInstance.where('user_id = ? AND activity_id = ?', current_user.id, current_user.partaking_in)
+    if !@all_activity_instances
+      @all_activity_instances = ""
+    end
   end
 end

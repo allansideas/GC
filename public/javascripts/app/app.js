@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Mon, 29 Aug 2011 21:23:55 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 09:44:15 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/app.coffee
  */
 

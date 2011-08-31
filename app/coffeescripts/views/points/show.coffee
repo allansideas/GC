@@ -5,8 +5,8 @@ class App.Views.Points.ShowView extends Backbone.View
     return JST["points/show"]
       
   initialize: ->
+    $('.screen').hide()
     $('#point').show()
-    $('#activity').hide()
     @render()
 
   render: ->

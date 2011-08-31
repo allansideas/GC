@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 01:03:00 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 09:31:50 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/points/show.coffee
  */
 
@@ -22,8 +22,8 @@
       return JST["points/show"];
     };
     ShowView.prototype.initialize = function() {
+      $('.screen').hide();
       $('#point').show();
-      $('#activity').hide();
       return this.render();
     };
     ShowView.prototype.render = function() {

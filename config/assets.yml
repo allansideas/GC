@@ -6,6 +6,7 @@ template_function: "Handlebars.compile"
 javascripts:
   common:
     - public/javascripts/underscore.js
+    - public/javascripts/bp_helper.js
     - public/javascripts/underscore.date.min.js
     - public/javascripts/json2.js
     - public/javascripts/jquery.js

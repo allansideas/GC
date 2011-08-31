@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 30 Aug 2011 05:25:43 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 05:39:30 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/models/activity_instance.coffee
  */
 
@@ -16,7 +16,15 @@
     function ActivityInstance() {
       ActivityInstance.__super__.constructor.apply(this, arguments);
     }
-    ActivityInstance.prototype.url = "/activity_instances";
+    ActivityInstance.prototype.url = function() {
+      var base;
+      base = '/activity_instances';
+      if (this.isNew()) {
+        return base;
+      } else {
+        return base + '/' + this.id;
+      }
+    };
     return ActivityInstance;
   })();
   App.Collections.ActivityInstancesCollection = (function() {

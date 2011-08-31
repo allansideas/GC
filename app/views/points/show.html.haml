@@ -3,15 +3,37 @@
   #activity.screen
   #activity_instance.screen
 
+<audio id="press" preload>
+<source src="/audio/button_press.mp3" type="audio/mp3" />
+<source src="/audio/button_press.ogg" type="audio/ogg" />
+</audio>
+<audio id="press1" preload>
+<source src="/audio/button_press_rev.mp3" type="audio/mp3" />
+<source src="/audio/button_press_rev.ogg" type="audio/ogg" />
+</audio>
+
 :javascript
+  $(window).load( function() {
+      setTimeout(scrollTo,200,0,1);
+  });
   $(document).ready(function(){
+  var button_press = document.getElementById('press');
+  var button_press1 = document.getElementById('press1');
+  $('.button').live('touchstart', function(e){
+    $(e.target).addClass('depressed')
+  });
+  $('.button').live('touchend', function(e){
+    button_press1.play();
+    $(e.target).removeClass('depressed');
+  });
   window.controller = new App.Routers.PointsRouter(
   {activities: #{@point.activities.to_json(:include => :route)}, 
   point: #{@point.to_json}, 
   user : #{current_user.to_json(:only => [:id, :current_activity, :current_activity_instance])},
   activity_instance : #{@activity_instance.to_json if @activity_instance},
   activity : #{@activity.to_json(:include => :route) if @activity},
-  marks: #{@marks.to_json if @marks}
+  marks: #{@marks.to_json if @marks},
+  all_activity_instances: #{@all_activity_instances.to_json if @all_activity_instances}
   });
   Backbone.history.start();
   });

@@ -20,5 +20,6 @@ class App.Views.Marks.MarkView extends Backbone.View
     td= @options.model.toJSON()
     td.mins = @mins
     td.seconds = @seconds
+    td.point_name = "point name"
     $(@el).prepend(@template()(td))
     return this

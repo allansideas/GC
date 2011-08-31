@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 02:50:34 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 07:54:24 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/controllers/points_router.coffee
  */
 
@@ -26,7 +26,13 @@
       this.page.activity_instance = new App.Models.ActivityInstance(options.activity_instance);
       this.page.marks = new App.Collections.MarksCollection();
       this.page.marks.reset(options.marks);
-      return console.log(options.marks);
+      this.page.all_activity_instances = new App.Collections.ActivityInstancesCollection();
+      this.page.all_activity_instances.reset(options.all_activity_instances);
+      return this.page.all_activity_instances.min(function(ai) {
+        if (ai.attributes.total_milliseconds !== null) {
+          return ai.attributes.total_milliseconds;
+        }
+      });
     };
     PointsRouter.prototype.routes = {
       "": "showPoint",

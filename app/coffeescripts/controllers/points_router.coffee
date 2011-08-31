@@ -10,7 +10,12 @@ class App.Routers.PointsRouter extends Backbone.Router
     @page.activity_instance = new App.Models.ActivityInstance options.activity_instance
     @page.marks = new App.Collections.MarksCollection()
     @page.marks.reset options.marks
-    console.log options.marks
+    @page.all_activity_instances = new App.Collections.ActivityInstancesCollection()
+    @page.all_activity_instances.reset options.all_activity_instances
+    @page.all_activity_instances.min (ai)->
+      if ai.attributes.total_milliseconds != null
+        return ai.attributes.total_milliseconds
+
   routes:
     "" : "showPoint"
     "/activities/:activity": "showActivity"

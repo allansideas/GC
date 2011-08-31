@@ -123,8 +123,8 @@
     color: #fff
     background: #075805
   &#split
+    +nice-button(#555)
     color: #fff
-    display: none
     background: #232352
   &#end
     color: #fff
@@ -138,7 +138,7 @@
   img
     display:block
     clear: both
-.timer_time
+.mark
   background: #888
   font-size: 18px
   font-weight: bold
@@ -147,35 +147,53 @@
   line-height: 40px
   text-align: center
   margin-bottom: 11px
+  +border-radius(5px)
+  .inner
+    width: 200px
+    margin: 0 auto
+    .left
+      float: left
+      div
+        margin-top: 5px
+        height: 15px
+        line-height: 15px
+        font-size: 14px
+        text-align: right
+        &.type
+          margin: 0
+          text-transform: capitalize
+    .right
+      float: right
+      .timer
+        height: 30px
+        line-height: 30px
+        margin-top: 5px
+        font-size: 18px
+        padding: 0 10px
+        color: #333
+        background: #fff
+        +box-shadow(#333, 1px, 1px, 3px, 0, inset)
+        +border-radius(3px)
+
   &.start
+    border-top: solid 3px lighten(#075805, 50%)
     background: lighten(#075805, 70%)
-    color: #333
+    .type
+      color: lighten(#075805, 30%)
+    color: #111
   &.split
     background: lighten(#232352, 60%)
     color: #333
   &.end
+    border-top: solid 3px lighten(#8c0b0b, 30%)
     background: lighten(#8c0b0b, 50%)
-    color: #333
-.mark
-  height: 40px
-  font-size: 14px
-  text-align: center
-  background: #ececec
-  margin-bottom: 10px
-  +border-radius(5px)
+    .type
+      color: lighten(#8c0b0b, 30%)
+    color: #111
+    .inner
+      .right
+        display: none
   
-#timer_buttons, #show_time
-  clear: left
-  width: 48%
-  float: left
-
-#marks_list
-  clear: left
-  width: 48%
-  float: left
-#timers
-  width: 48%
-  float: right
 #main_nav
   background: url(img/nav.png) left top no-repeat
   width: 349px

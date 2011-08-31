@@ -5,11 +5,7 @@ class App.Views.Activities.ShowView extends Backbone.View
     return JST["activities/show"]
       
   initialize: ->
-    $('#point').hide()
-    $('.button').live 'touchstart', (e)->
-      $(e.target).addClass('depressed')
-    $('.button').live 'touchend', (e)->
-      $(e.target).removeClass('depressed')
+    $('.screen').hide()
     @render()
 
   render: ->

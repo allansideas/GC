@@ -1,5 +1,10 @@
 class App.Models.ActivityInstance extends Backbone.Model
-  url: "/activity_instances"
+  url : ()->
+    base = '/activity_instances'
+    if (this.isNew()) 
+      return base
+    else 
+      return base + '/' + this.id
 
   
 class App.Collections.ActivityInstancesCollection extends Backbone.Collection

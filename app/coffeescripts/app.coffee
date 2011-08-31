@@ -6,4 +6,3 @@ window.App =
   Views: {}
   User: {}
 
-

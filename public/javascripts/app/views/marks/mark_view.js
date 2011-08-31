@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 03:45:31 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 09:20:18 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/marks/mark_view.coffee
  */
 
@@ -40,6 +40,7 @@
       td = this.options.model.toJSON();
       td.mins = this.mins;
       td.seconds = this.seconds;
+      td.point_name = "point name";
       $(this.el).prepend(this.template()(td));
       return this;
     };

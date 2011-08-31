@@ -657,9 +657,84 @@ p {
 }
 /* line 125, ../../app/stylesheets/partials/_custom.sass */
 .button#split {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  border-width: 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  border-style: solid;
   color: white;
-  display: none;
+  display: block;
+  padding: 12px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  background-color: #555555;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6e6e6e), color-stop(50%, #555555), color-stop(100%, #3b3b3b));
+  background-image: -webkit-linear-gradient(top, #6e6e6e, #555555, #3b3b3b);
+  background-image: -moz-linear-gradient(top, #6e6e6e, #555555, #3b3b3b);
+  background-image: -o-linear-gradient(top, #6e6e6e, #555555, #3b3b3b);
+  background-image: -ms-linear-gradient(top, #6e6e6e, #555555, #3b3b3b);
+  background-image: linear-gradient(top, #6e6e6e, #555555, #3b3b3b);
+  border-color: #222222;
+  border-left-color: #555555;
+  border-top-color: #555555;
+  -moz-box-shadow: inset 1px 1px 0 0 rgba(187, 187, 187, 0.5);
+  -webkit-box-shadow: inset 1px 1px 0 0 rgba(187, 187, 187, 0.5);
+  -o-box-shadow: inset 1px 1px 0 0 rgba(187, 187, 187, 0.5);
+  box-shadow: inset 1px 1px 0 0 rgba(187, 187, 187, 0.5);
+  color: white;
+  text-shadow: #2f2f2f 0 1px 2px;
+  color: white;
   background: #232352;
+}
+/* line 15, ../../app/stylesheets/partials/_custom.sass */
+.button#split:hover .title {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 17, ../../app/stylesheets/partials/_custom.sass */
+.button#split:hover .subtitle {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+/* line 19, ../../app/stylesheets/partials/_custom.sass */
+.button#split:active {
+  padding: 13px 15px 11px;
+}
+/* line 64, ../../app/stylesheets/partials/_custom.sass */
+.button#split:hover, .button#split:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7b7b7b), color-stop(50%, #626262), color-stop(100%, #3b3b3b));
+  background-image: -webkit-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
+  background-image: -moz-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
+  background-image: -o-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
+  background-image: -ms-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
+  background-image: linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
+}
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
+.button#split:active, .button#split.depressed {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #555555));
+  background-image: -webkit-linear-gradient(top, #484848, #555555);
+  background-image: -moz-linear-gradient(top, #484848, #555555);
+  background-image: -o-linear-gradient(top, #484848, #555555);
+  background-image: -ms-linear-gradient(top, #484848, #555555);
+  background-image: linear-gradient(top, #484848, #555555);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-color: #222222;
 }
 /* line 129, ../../app/stylesheets/partials/_custom.sass */
 .button#end {
@@ -678,7 +753,7 @@ p {
 }
 
 /* line 141, ../../app/stylesheets/partials/_custom.sass */
-.timer_time {
+.mark {
   background: #888888;
   font-size: 18px;
   font-weight: bold;
@@ -687,30 +762,6 @@ p {
   line-height: 40px;
   text-align: center;
   margin-bottom: 11px;
-}
-/* line 150, ../../app/stylesheets/partials/_custom.sass */
-.timer_time.start {
-  background: #c8fcc6;
-  color: #333333;
-}
-/* line 153, ../../app/stylesheets/partials/_custom.sass */
-.timer_time.split {
-  background: #c2c2e5;
-  color: #333333;
-}
-/* line 156, ../../app/stylesheets/partials/_custom.sass */
-.timer_time.end {
-  background: #f79f9f;
-  color: #333333;
-}
-
-/* line 159, ../../app/stylesheets/partials/_custom.sass */
-.mark {
-  height: 40px;
-  font-size: 14px;
-  text-align: center;
-  background: #ececec;
-  margin-bottom: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -o-border-radius: 5px;
@@ -718,28 +769,83 @@ p {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-
-/* line 167, ../../app/stylesheets/partials/_custom.sass */
-#timer_buttons, #show_time {
-  clear: left;
-  width: 48%;
+/* line 151, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner {
+  width: 200px;
+  margin: 0 auto;
+}
+/* line 154, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner .left {
   float: left;
 }
-
-/* line 172, ../../app/stylesheets/partials/_custom.sass */
-#marks_list {
-  clear: left;
-  width: 48%;
-  float: left;
+/* line 156, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner .left div {
+  margin-top: 5px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 14px;
+  text-align: right;
 }
-
-/* line 176, ../../app/stylesheets/partials/_custom.sass */
-#timers {
-  width: 48%;
+/* line 162, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner .left div.type {
+  margin: 0;
+  text-transform: capitalize;
+}
+/* line 165, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner .right {
   float: right;
 }
+/* line 167, ../../app/stylesheets/partials/_custom.sass */
+.mark .inner .right .timer {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 5px;
+  font-size: 18px;
+  padding: 0 10px;
+  color: #333333;
+  background: white;
+  -moz-box-shadow: inset 1px 1px 3px 0 #333333;
+  -webkit-box-shadow: inset 1px 1px 3px 0 #333333;
+  -o-box-shadow: inset 1px 1px 3px 0 #333333;
+  box-shadow: inset 1px 1px 3px 0 #333333;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 178, ../../app/stylesheets/partials/_custom.sass */
+.mark.start {
+  border-top: solid 3px #69f666;
+  background: #c8fcc6;
+  color: #111111;
+}
+/* line 181, ../../app/stylesheets/partials/_custom.sass */
+.mark.start .type {
+  color: #13e90d;
+}
+/* line 184, ../../app/stylesheets/partials/_custom.sass */
+.mark.split {
+  background: #c2c2e5;
+  color: #333333;
+}
+/* line 187, ../../app/stylesheets/partials/_custom.sass */
+.mark.end {
+  border-top: solid 3px #f04040;
+  background: #f79f9f;
+  color: #111111;
+}
+/* line 190, ../../app/stylesheets/partials/_custom.sass */
+.mark.end .type {
+  color: #f04040;
+}
+/* line 194, ../../app/stylesheets/partials/_custom.sass */
+.mark.end .inner .right {
+  display: none;
+}
 
-/* line 179, ../../app/stylesheets/partials/_custom.sass */
+/* line 197, ../../app/stylesheets/partials/_custom.sass */
 #main_nav {
   background: url(img/nav.png) left top no-repeat;
   width: 349px;
@@ -749,32 +855,32 @@ p {
   top: 5px;
   left: 5px;
 }
-/* line 187, ../../app/stylesheets/partials/_custom.sass */
+/* line 205, ../../app/stylesheets/partials/_custom.sass */
 #main_nav h1 {
   margin-top: 24px;
   font-size: 26px;
   color: white;
   font-weight: normal;
 }
-/* line 192, ../../app/stylesheets/partials/_custom.sass */
+/* line 210, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul, #main_nav li {
   list-style: none;
   padding: 0 0 0 5px;
   margin: 0;
 }
-/* line 196, ../../app/stylesheets/partials/_custom.sass */
+/* line 214, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul {
   margin-top: 20px;
 }
-/* line 198, ../../app/stylesheets/partials/_custom.sass */
+/* line 216, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li {
   margin-top: 16px;
 }
-/* line 200, ../../app/stylesheets/partials/_custom.sass */
+/* line 218, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li.why {
   margin-top: 18px;
 }
-/* line 202, ../../app/stylesheets/partials/_custom.sass */
+/* line 220, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a {
   font-family: "Luckiest Guy", cursive;
   font-size: 23px;
@@ -783,54 +889,54 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 209, ../../app/stylesheets/partials/_custom.sass */
+/* line 227, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a:hover, #main_nav a.current {
   color: #fdff3e;
 }
 
-/* line 211, ../../app/stylesheets/partials/_custom.sass */
+/* line 229, ../../app/stylesheets/partials/_custom.sass */
 .page {
   padding: 20px 30px;
   color: white;
   font-size: 14px;
 }
-/* line 215, ../../app/stylesheets/partials/_custom.sass */
+/* line 233, ../../app/stylesheets/partials/_custom.sass */
 .page h2 {
   font-size: 26px;
   margin-bottom: 5px;
 }
-/* line 218, ../../app/stylesheets/partials/_custom.sass */
+/* line 236, ../../app/stylesheets/partials/_custom.sass */
 .page h3 {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 222, ../../app/stylesheets/partials/_custom.sass */
+/* line 240, ../../app/stylesheets/partials/_custom.sass */
 .page ul {
   width: 400px;
   margin: 0;
   padding: 0;
   margin-left: 25px;
 }
-/* line 227, ../../app/stylesheets/partials/_custom.sass */
+/* line 245, ../../app/stylesheets/partials/_custom.sass */
 .page ul li {
   padding-top: 5px;
 }
 
-/* line 231, ../../app/stylesheets/partials/_custom.sass */
+/* line 249, ../../app/stylesheets/partials/_custom.sass */
 #pages_container {
   width: 980px;
   margin: 0 auto;
   padding-top: 170px;
 }
-/* line 235, ../../app/stylesheets/partials/_custom.sass */
+/* line 253, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #what_page {
   margin-left: 100px;
   width: 440px;
   background: url(img/sign.png) left top no-repeat;
   height: 387px;
 }
-/* line 240, ../../app/stylesheets/partials/_custom.sass */
+/* line 258, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #how_page {
   height: 387px;
   width: 400px;
@@ -838,7 +944,7 @@ p {
   float: right;
   background: url(img/sign.png) left top no-repeat;
 }
-/* line 246, ../../app/stylesheets/partials/_custom.sass */
+/* line 264, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #why_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
@@ -846,7 +952,7 @@ p {
   clear: both;
   margin-top: 50px;
 }
-/* line 252, ../../app/stylesheets/partials/_custom.sass */
+/* line 270, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #who_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
