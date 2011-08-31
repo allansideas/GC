@@ -3,20 +3,35 @@ class App.Routers.PointsRouter extends Backbone.Router
     @activities = new App.Collections.ActivitiesCollection()
     @activities.reset options.activities
     @point = new App.Models.Point options.point
-    @users = new App.Collections.UsersCollection()
+    #@users = new App.Collections.UsersCollection()
     @user = new App.Models.User options.user
-    @users.reset @user
-    
+    @page = {}
+    @page.activity = new App.Models.Activity options.activity
+    @page.activity_instance = new App.Models.ActivityInstance options.activity_instance
+    @page.marks = new App.Collections.MarksCollection()
+    @page.marks.reset options.marks
+    console.log options.marks
   routes:
     "" : "showPoint"
     "/activities/:activity": "showActivity"
     "/start/:activity_id" : "startActivity"
     
+    
   showPoint: ()->
-    @view = new App.Views.Points.ShowView
-      point: @point
-      activities: @activities
-      el: $('#point')
+    if !@user.attributes.current_activity_instance
+      @view = new App.Views.Points.ShowView
+        point: @point
+        activities: @activities
+        el: $('#point')
+    else
+      @view = new App.Views.ActivityInstances.ShowView
+        el: $('#activity_instance')
+        point: @point
+        user: @user
+        activity: @page.activity
+        activity_instance: @page.activity_instance
+        route: @page.activity.attributes.route
+        marks: @page.marks
     
   showActivity: (activity)->
     @view = new App.Views.Activities.ShowView

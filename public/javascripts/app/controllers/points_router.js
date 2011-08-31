@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Tue, 30 Aug 2011 10:15:22 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 02:50:34 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/controllers/points_router.coffee
  */
 
@@ -20,9 +20,13 @@
       this.activities = new App.Collections.ActivitiesCollection();
       this.activities.reset(options.activities);
       this.point = new App.Models.Point(options.point);
-      this.users = new App.Collections.UsersCollection();
       this.user = new App.Models.User(options.user);
-      return this.users.reset(this.user);
+      this.page = {};
+      this.page.activity = new App.Models.Activity(options.activity);
+      this.page.activity_instance = new App.Models.ActivityInstance(options.activity_instance);
+      this.page.marks = new App.Collections.MarksCollection();
+      this.page.marks.reset(options.marks);
+      return console.log(options.marks);
     };
     PointsRouter.prototype.routes = {
       "": "showPoint",
@@ -30,11 +34,23 @@
       "/start/:activity_id": "startActivity"
     };
     PointsRouter.prototype.showPoint = function() {
-      return this.view = new App.Views.Points.ShowView({
-        point: this.point,
-        activities: this.activities,
-        el: $('#point')
-      });
+      if (!this.user.attributes.current_activity_instance) {
+        return this.view = new App.Views.Points.ShowView({
+          point: this.point,
+          activities: this.activities,
+          el: $('#point')
+        });
+      } else {
+        return this.view = new App.Views.ActivityInstances.ShowView({
+          el: $('#activity_instance'),
+          point: this.point,
+          user: this.user,
+          activity: this.page.activity,
+          activity_instance: this.page.activity_instance,
+          route: this.page.activity.attributes.route,
+          marks: this.page.marks
+        });
+      }
     };
     PointsRouter.prototype.showActivity = function(activity) {
       return this.view = new App.Views.Activities.ShowView({

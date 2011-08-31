@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Thu, 25 Aug 2011 00:25:53 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 03:45:31 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/marks/mark_view.coffee
  */
 
@@ -21,20 +21,26 @@
     MarkView.prototype.template = function() {
       return JST["marks/mark"];
     };
-    MarkView.prototype.events = {
-      "click .destroy": "destroy"
+    MarkView.prototype.initialize = function() {
+      this.getTime();
+      return this.render();
     };
-    MarkView.prototype.tagName = "div";
-    MarkView.prototype.destroy = function() {
-      this.options.model.destroy();
-      this.remove();
-      return false;
+    MarkView.prototype.getTime = function() {
+      var ago;
+      if (this.options.ended_at !== void 0) {
+        ago = _.date(this.options.model.attributes.time).from(_.date(this.options.ended_at), true, true) * -1;
+      } else {
+        ago = _.date(this.options.model.attributes.time).fromNow(false, true) * -1;
+      }
+      this.mins = Math.floor((ago / 1000) / 60);
+      return this.seconds = Math.floor((ago / 1000) % 60);
     };
     MarkView.prototype.render = function() {
-      $(this.el).css({
-        display: 'none'
-      });
-      $(this.el).html(this.template()(this.options.model.toJSON())).fadeIn(300);
+      var td;
+      td = this.options.model.toJSON();
+      td.mins = this.mins;
+      td.seconds = this.seconds;
+      $(this.el).prepend(this.template()(td));
       return this;
     };
     return MarkView;

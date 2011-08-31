@@ -8,8 +8,10 @@
   window.controller = new App.Routers.PointsRouter(
   {activities: #{@point.activities.to_json(:include => :route)}, 
   point: #{@point.to_json}, 
-  user : #{current_user.to_json(:only => [:id])},
-  activity_instances : #{@activity_instances.to_json}
+  user : #{current_user.to_json(:only => [:id, :current_activity, :current_activity_instance])},
+  activity_instance : #{@activity_instance.to_json if @activity_instance},
+  activity : #{@activity.to_json(:include => :route) if @activity},
+  marks: #{@marks.to_json if @marks}
   });
   Backbone.history.start();
   });
