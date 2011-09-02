@@ -15,11 +15,15 @@ class App.Routers.PointsRouter extends Backbone.Router
     @page.all_activity_instances.min (ai)->
       if ai.attributes.total_milliseconds != null
         return ai.attributes.total_milliseconds
+    @page.pages = new App.Collections.PagesCollection()
+    @page.pages.reset options.pages
 
   routes:
     "" : "showPoint"
     "/activities/:activity": "showActivity"
     "/start/:activity_id" : "startActivity"
+    "/page/:page_id" : "showPage"
+    "/page/:page_id/:sub_page_id" : "showSubPage"
     
     
   showPoint: ()->
@@ -28,6 +32,7 @@ class App.Routers.PointsRouter extends Backbone.Router
         point: @point
         activities: @activities
         el: $('#point')
+        pages: @page.pages
     else
       @view = new App.Views.ActivityInstances.ShowView
         el: $('#activity_instance')
@@ -58,6 +63,11 @@ class App.Routers.PointsRouter extends Backbone.Router
       user_id: @user.id
       activity_id : activity_id
 
+  showPage: (page_id) ->
+    console.log @page.pages.get(page_id)
+    @view = new App.Views.Pages.PageView
+      page: @page.pages.get(page_id)
+      el: $('#info_page')
 
 
 

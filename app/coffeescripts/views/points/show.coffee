@@ -13,6 +13,7 @@ class App.Views.Points.ShowView extends Backbone.View
     #$(@el).html(@template()(point : @options.point.toJSON, activities : @options.activities.toJSON)).fadeIn(300)
     td = @options.point.toJSON()
     td.activities = @options.activities.toJSON()
+    td.pages = @options.pages.toJSON()
     $(@el).html(@template()(td)).fadeIn(300)
     return this
 

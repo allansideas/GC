@@ -343,12 +343,17 @@ p {
   padding: 20px;
 }
 
-/* line 71, ../../app/stylesheets/partials/_custom.sass */
-#point, #activity {
-  margin-top: 40px;
+/* line 1, ../../app/stylesheets/partials/_custom.sass */
+body {
+  height: 101%;
 }
 
 /* line 73, ../../app/stylesheets/partials/_custom.sass */
+#point, #activity, #info_page {
+  margin-top: 40px;
+}
+
+/* line 75, ../../app/stylesheets/partials/_custom.sass */
 #mini_nav {
   position: fixed;
   top: 0;
@@ -358,13 +363,102 @@ p {
   width: 100%;
   border-bottom: solid 2px #888888;
 }
+/* line 83, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav a {
+  float: left;
+  margin-right: 10px;
+}
+/* line 86, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav {
+  float: left;
+}
+/* line 88, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  -o-background-clip: padding-box;
+  -ms-background-clip: padding-box;
+  -khtml-background-clip: padding-box;
+  background-clip: padding-box;
+  border-width: 1px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  border-style: solid;
+  color: white;
+  display: block;
+  width: 100px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  background-color: #155969;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1d7d94), color-stop(50%, #155969), color-stop(100%, #0c353e));
+  background-image: -webkit-linear-gradient(top, #1d7d94, #155969, #0c353e);
+  background-image: -moz-linear-gradient(top, #1d7d94, #155969, #0c353e);
+  background-image: -o-linear-gradient(top, #1d7d94, #155969, #0c353e);
+  background-image: -ms-linear-gradient(top, #1d7d94, #155969, #0c353e);
+  background-image: linear-gradient(top, #1d7d94, #155969, #0c353e);
+  border-color: #041114;
+  border-left-color: #155969;
+  border-top-color: #155969;
+  -moz-box-shadow: inset 1px 1px 0 0 rgba(150, 174, 180, 0.5);
+  -webkit-box-shadow: inset 1px 1px 0 0 rgba(150, 174, 180, 0.5);
+  -o-box-shadow: inset 1px 1px 0 0 rgba(150, 174, 180, 0.5);
+  box-shadow: inset 1px 1px 0 0 rgba(150, 174, 180, 0.5);
+  color: white;
+  text-shadow: #082329 0 1px 2px;
+}
+/* line 41, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a:hover .title {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 43, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a:hover .subtitle {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+/* line 45, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a:active {
+  padding: 5px 10px;
+}
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a:hover, #mini_nav #pages_nav a:focus {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #228fa9), color-stop(50%, #196b7e), color-stop(100%, #0c353e));
+  background-image: -webkit-linear-gradient(top, #228fa9, #196b7e, #0c353e);
+  background-image: -moz-linear-gradient(top, #228fa9, #196b7e, #0c353e);
+  background-image: -o-linear-gradient(top, #228fa9, #196b7e, #0c353e);
+  background-image: -ms-linear-gradient(top, #228fa9, #196b7e, #0c353e);
+  background-image: linear-gradient(top, #228fa9, #196b7e, #0c353e);
+}
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
+#mini_nav #pages_nav a:active, #mini_nav #pages_nav a.depressed {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #16444f), color-stop(100%, #1b5563));
+  background-image: -webkit-linear-gradient(top, #16444f, #1b5563);
+  background-image: -moz-linear-gradient(top, #16444f, #1b5563);
+  background-image: -o-linear-gradient(top, #16444f, #1b5563);
+  background-image: -ms-linear-gradient(top, #16444f, #1b5563);
+  background-image: linear-gradient(top, #16444f, #1b5563);
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-color: #041114;
+}
 
-/* line 82, ../../app/stylesheets/partials/_custom.sass */
+/* line 91, ../../app/stylesheets/partials/_custom.sass */
 #mobile p {
   margin-bottom: 20px;
   font-size: 16px;
 }
-/* line 85, ../../app/stylesheets/partials/_custom.sass */
+/* line 94, ../../app/stylesheets/partials/_custom.sass */
 #mobile h2 {
   width: 100%;
   background: #ddddd3;
@@ -376,22 +470,22 @@ p {
   font-size: 24px;
   margin-bottom: 20px;
 }
-/* line 95, ../../app/stylesheets/partials/_custom.sass */
+/* line 104, ../../app/stylesheets/partials/_custom.sass */
 #mobile form {
   width: 100%;
   margin: 0 auto;
   padding: 0;
 }
-/* line 99, ../../app/stylesheets/partials/_custom.sass */
+/* line 108, ../../app/stylesheets/partials/_custom.sass */
 #mobile form p {
   width: 100%;
 }
-/* line 101, ../../app/stylesheets/partials/_custom.sass */
+/* line 110, ../../app/stylesheets/partials/_custom.sass */
 #mobile form label {
   font-size: 18px;
   display: block;
 }
-/* line 104, ../../app/stylesheets/partials/_custom.sass */
+/* line 113, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input, #mobile form textarea, #mobile form select {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -405,7 +499,7 @@ p {
   padding: 8px 0;
   display: block;
 }
-/* line 111, ../../app/stylesheets/partials/_custom.sass */
+/* line 120, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit] {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
@@ -447,21 +541,21 @@ p {
   color: white;
   text-shadow: #51892e 0 1px 2px;
 }
-/* line 15, ../../app/stylesheets/partials/_custom.sass */
+/* line 17, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit]:hover .title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 17, ../../app/stylesheets/partials/_custom.sass */
+/* line 19, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit]:hover .subtitle {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 19, ../../app/stylesheets/partials/_custom.sass */
+/* line 21, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit]:active {
   padding: 13px 15px 11px;
 }
-/* line 64, ../../app/stylesheets/partials/_custom.sass */
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit]:hover, #mobile form input[type=submit]:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9fd37d), color-stop(50%, #82c657), color-stop(100%, #5d9c35));
   background-image: -webkit-linear-gradient(top, #9fd37d, #82c657, #5d9c35);
@@ -470,7 +564,7 @@ p {
   background-image: -ms-linear-gradient(top, #9fd37d, #82c657, #5d9c35);
   background-image: linear-gradient(top, #9fd37d, #82c657, #5d9c35);
 }
-/* line 66, ../../app/stylesheets/partials/_custom.sass */
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
 #mobile form input[type=submit]:active, #mobile form input[type=submit].depressed {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6ba447), color-stop(100%, #77b351));
   background-image: -webkit-linear-gradient(top, #6ba447, #77b351);
@@ -485,12 +579,12 @@ p {
   border-color: #467628;
 }
 
-/* line 114, ../../app/stylesheets/partials/_custom.sass */
+/* line 123, ../../app/stylesheets/partials/_custom.sass */
 .button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   margin-bottom: 20px;
 }
-/* line 117, ../../app/stylesheets/partials/_custom.sass */
+/* line 126, ../../app/stylesheets/partials/_custom.sass */
 .button.activity {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
@@ -532,21 +626,21 @@ p {
   color: white;
   text-shadow: #51892e 0 1px 2px;
 }
-/* line 15, ../../app/stylesheets/partials/_custom.sass */
+/* line 17, ../../app/stylesheets/partials/_custom.sass */
 .button.activity:hover .title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 17, ../../app/stylesheets/partials/_custom.sass */
+/* line 19, ../../app/stylesheets/partials/_custom.sass */
 .button.activity:hover .subtitle {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 19, ../../app/stylesheets/partials/_custom.sass */
+/* line 21, ../../app/stylesheets/partials/_custom.sass */
 .button.activity:active {
   padding: 13px 15px 11px;
 }
-/* line 64, ../../app/stylesheets/partials/_custom.sass */
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
 .button.activity:hover, .button.activity:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #9fd37d), color-stop(50%, #82c657), color-stop(100%, #5d9c35));
   background-image: -webkit-linear-gradient(top, #9fd37d, #82c657, #5d9c35);
@@ -555,7 +649,7 @@ p {
   background-image: -ms-linear-gradient(top, #9fd37d, #82c657, #5d9c35);
   background-image: linear-gradient(top, #9fd37d, #82c657, #5d9c35);
 }
-/* line 66, ../../app/stylesheets/partials/_custom.sass */
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
 .button.activity:active, .button.activity.depressed {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6ba447), color-stop(100%, #77b351));
   background-image: -webkit-linear-gradient(top, #6ba447, #77b351);
@@ -569,7 +663,7 @@ p {
   box-shadow: none;
   border-color: #467628;
 }
-/* line 119, ../../app/stylesheets/partials/_custom.sass */
+/* line 128, ../../app/stylesheets/partials/_custom.sass */
 .button.small {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
@@ -613,21 +707,21 @@ p {
   text-shadow: #2f2f2f 0 1px 2px;
   margin-bottom: 0;
 }
-/* line 39, ../../app/stylesheets/partials/_custom.sass */
+/* line 41, ../../app/stylesheets/partials/_custom.sass */
 .button.small:hover .title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 41, ../../app/stylesheets/partials/_custom.sass */
+/* line 43, ../../app/stylesheets/partials/_custom.sass */
 .button.small:hover .subtitle {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 43, ../../app/stylesheets/partials/_custom.sass */
+/* line 45, ../../app/stylesheets/partials/_custom.sass */
 .button.small:active {
   padding: 5px 10px;
 }
-/* line 64, ../../app/stylesheets/partials/_custom.sass */
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
 .button.small:hover, .button.small:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7b7b7b), color-stop(50%, #626262), color-stop(100%, #3b3b3b));
   background-image: -webkit-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
@@ -636,7 +730,7 @@ p {
   background-image: -ms-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
   background-image: linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
 }
-/* line 66, ../../app/stylesheets/partials/_custom.sass */
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
 .button.small:active, .button.small.depressed {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #555555));
   background-image: -webkit-linear-gradient(top, #484848, #555555);
@@ -650,12 +744,12 @@ p {
   box-shadow: none;
   border-color: #222222;
 }
-/* line 122, ../../app/stylesheets/partials/_custom.sass */
+/* line 131, ../../app/stylesheets/partials/_custom.sass */
 .button#start {
   color: white;
   background: #075805;
 }
-/* line 125, ../../app/stylesheets/partials/_custom.sass */
+/* line 134, ../../app/stylesheets/partials/_custom.sass */
 .button#split {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
@@ -699,21 +793,21 @@ p {
   color: white;
   background: #232352;
 }
-/* line 15, ../../app/stylesheets/partials/_custom.sass */
+/* line 17, ../../app/stylesheets/partials/_custom.sass */
 .button#split:hover .title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 17, ../../app/stylesheets/partials/_custom.sass */
+/* line 19, ../../app/stylesheets/partials/_custom.sass */
 .button#split:hover .subtitle {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 19, ../../app/stylesheets/partials/_custom.sass */
+/* line 21, ../../app/stylesheets/partials/_custom.sass */
 .button#split:active {
   padding: 13px 15px 11px;
 }
-/* line 64, ../../app/stylesheets/partials/_custom.sass */
+/* line 66, ../../app/stylesheets/partials/_custom.sass */
 .button#split:hover, .button#split:focus {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7b7b7b), color-stop(50%, #626262), color-stop(100%, #3b3b3b));
   background-image: -webkit-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
@@ -722,7 +816,7 @@ p {
   background-image: -ms-linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
   background-image: linear-gradient(top, #7b7b7b, #626262, #3b3b3b);
 }
-/* line 66, ../../app/stylesheets/partials/_custom.sass */
+/* line 68, ../../app/stylesheets/partials/_custom.sass */
 .button#split:active, .button#split.depressed {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #484848), color-stop(100%, #555555));
   background-image: -webkit-linear-gradient(top, #484848, #555555);
@@ -736,23 +830,41 @@ p {
   box-shadow: none;
   border-color: #222222;
 }
-/* line 129, ../../app/stylesheets/partials/_custom.sass */
+/* line 138, ../../app/stylesheets/partials/_custom.sass */
 .button#end {
   color: white;
   background: #8c0b0b;
   display: none;
 }
 
-/* line 136, ../../app/stylesheets/partials/_custom.sass */
+@media screen and (orientation:portrait) {
+  /* line 144, ../../app/stylesheets/partials/_custom.sass */
+  body {
+    background: #444444;
+  }
+}
+@media screen and (orientation:landscape) {
+  /* line 150, ../../app/stylesheets/partials/_custom.sass */
+  body {
+    background: #222222;
+  }
+}
+/* Landscape */
+/* line 157, ../../app/stylesheets/partials/_custom.sass */
+#gallery img {
+  display: block;
+}
+
+/* line 160, ../../app/stylesheets/partials/_custom.sass */
 #qr {
   clear: both;
 }
-/* line 138, ../../app/stylesheets/partials/_custom.sass */
+/* line 162, ../../app/stylesheets/partials/_custom.sass */
 #qr img {
   clear: both;
 }
 
-/* line 141, ../../app/stylesheets/partials/_custom.sass */
+/* line 165, ../../app/stylesheets/partials/_custom.sass */
 .mark {
   background: #888888;
   font-size: 18px;
@@ -769,16 +881,16 @@ p {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 151, ../../app/stylesheets/partials/_custom.sass */
+/* line 175, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner {
   width: 200px;
   margin: 0 auto;
 }
-/* line 154, ../../app/stylesheets/partials/_custom.sass */
+/* line 178, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner .left {
   float: left;
 }
-/* line 156, ../../app/stylesheets/partials/_custom.sass */
+/* line 180, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner .left div {
   margin-top: 5px;
   height: 15px;
@@ -786,16 +898,16 @@ p {
   font-size: 14px;
   text-align: right;
 }
-/* line 162, ../../app/stylesheets/partials/_custom.sass */
+/* line 186, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner .left div.type {
   margin: 0;
   text-transform: capitalize;
 }
-/* line 165, ../../app/stylesheets/partials/_custom.sass */
+/* line 189, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner .right {
   float: right;
 }
-/* line 167, ../../app/stylesheets/partials/_custom.sass */
+/* line 191, ../../app/stylesheets/partials/_custom.sass */
 .mark .inner .right .timer {
   height: 30px;
   line-height: 30px;
@@ -815,37 +927,37 @@ p {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 178, ../../app/stylesheets/partials/_custom.sass */
+/* line 202, ../../app/stylesheets/partials/_custom.sass */
 .mark.start {
   border-top: solid 3px #69f666;
   background: #c8fcc6;
   color: #111111;
 }
-/* line 181, ../../app/stylesheets/partials/_custom.sass */
+/* line 205, ../../app/stylesheets/partials/_custom.sass */
 .mark.start .type {
   color: #13e90d;
 }
-/* line 184, ../../app/stylesheets/partials/_custom.sass */
+/* line 208, ../../app/stylesheets/partials/_custom.sass */
 .mark.split {
   background: #c2c2e5;
   color: #333333;
 }
-/* line 187, ../../app/stylesheets/partials/_custom.sass */
+/* line 211, ../../app/stylesheets/partials/_custom.sass */
 .mark.end {
   border-top: solid 3px #f04040;
   background: #f79f9f;
   color: #111111;
 }
-/* line 190, ../../app/stylesheets/partials/_custom.sass */
+/* line 214, ../../app/stylesheets/partials/_custom.sass */
 .mark.end .type {
   color: #f04040;
 }
-/* line 194, ../../app/stylesheets/partials/_custom.sass */
+/* line 218, ../../app/stylesheets/partials/_custom.sass */
 .mark.end .inner .right {
   display: none;
 }
 
-/* line 197, ../../app/stylesheets/partials/_custom.sass */
+/* line 221, ../../app/stylesheets/partials/_custom.sass */
 #main_nav {
   background: url(img/nav.png) left top no-repeat;
   width: 349px;
@@ -855,32 +967,32 @@ p {
   top: 5px;
   left: 5px;
 }
-/* line 205, ../../app/stylesheets/partials/_custom.sass */
+/* line 229, ../../app/stylesheets/partials/_custom.sass */
 #main_nav h1 {
   margin-top: 24px;
   font-size: 26px;
   color: white;
   font-weight: normal;
 }
-/* line 210, ../../app/stylesheets/partials/_custom.sass */
+/* line 234, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul, #main_nav li {
   list-style: none;
   padding: 0 0 0 5px;
   margin: 0;
 }
-/* line 214, ../../app/stylesheets/partials/_custom.sass */
+/* line 238, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul {
   margin-top: 20px;
 }
-/* line 216, ../../app/stylesheets/partials/_custom.sass */
+/* line 240, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li {
   margin-top: 16px;
 }
-/* line 218, ../../app/stylesheets/partials/_custom.sass */
+/* line 242, ../../app/stylesheets/partials/_custom.sass */
 #main_nav ul li.why {
   margin-top: 18px;
 }
-/* line 220, ../../app/stylesheets/partials/_custom.sass */
+/* line 244, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a {
   font-family: "Luckiest Guy", cursive;
   font-size: 23px;
@@ -889,54 +1001,54 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 227, ../../app/stylesheets/partials/_custom.sass */
+/* line 251, ../../app/stylesheets/partials/_custom.sass */
 #main_nav a:hover, #main_nav a.current {
   color: #fdff3e;
 }
 
-/* line 229, ../../app/stylesheets/partials/_custom.sass */
+/* line 253, ../../app/stylesheets/partials/_custom.sass */
 .page {
   padding: 20px 30px;
   color: white;
   font-size: 14px;
 }
-/* line 233, ../../app/stylesheets/partials/_custom.sass */
+/* line 257, ../../app/stylesheets/partials/_custom.sass */
 .page h2 {
   font-size: 26px;
   margin-bottom: 5px;
 }
-/* line 236, ../../app/stylesheets/partials/_custom.sass */
+/* line 260, ../../app/stylesheets/partials/_custom.sass */
 .page h3 {
   font-size: 18px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
-/* line 240, ../../app/stylesheets/partials/_custom.sass */
+/* line 264, ../../app/stylesheets/partials/_custom.sass */
 .page ul {
   width: 400px;
   margin: 0;
   padding: 0;
   margin-left: 25px;
 }
-/* line 245, ../../app/stylesheets/partials/_custom.sass */
+/* line 269, ../../app/stylesheets/partials/_custom.sass */
 .page ul li {
   padding-top: 5px;
 }
 
-/* line 249, ../../app/stylesheets/partials/_custom.sass */
+/* line 273, ../../app/stylesheets/partials/_custom.sass */
 #pages_container {
   width: 980px;
   margin: 0 auto;
   padding-top: 170px;
 }
-/* line 253, ../../app/stylesheets/partials/_custom.sass */
+/* line 277, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #what_page {
   margin-left: 100px;
   width: 440px;
   background: url(img/sign.png) left top no-repeat;
   height: 387px;
 }
-/* line 258, ../../app/stylesheets/partials/_custom.sass */
+/* line 282, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #how_page {
   height: 387px;
   width: 400px;
@@ -944,7 +1056,7 @@ p {
   float: right;
   background: url(img/sign.png) left top no-repeat;
 }
-/* line 264, ../../app/stylesheets/partials/_custom.sass */
+/* line 288, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #why_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;
@@ -952,7 +1064,7 @@ p {
   clear: both;
   margin-top: 50px;
 }
-/* line 270, ../../app/stylesheets/partials/_custom.sass */
+/* line 294, ../../app/stylesheets/partials/_custom.sass */
 #pages_container #who_page {
   background: url(img/sign.png) left top no-repeat;
   height: 327px;

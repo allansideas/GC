@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 09:31:50 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Sep 2011 03:08:05 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/points/show.coffee
  */
 
@@ -30,6 +30,7 @@
       var td;
       td = this.options.point.toJSON();
       td.activities = this.options.activities.toJSON();
+      td.pages = this.options.pages.toJSON();
       $(this.el).html(this.template()(td)).fadeIn(300);
       return this;
     };

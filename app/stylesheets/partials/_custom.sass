@@ -1,3 +1,5 @@
+body 
+  height: 101%
 =nice-button($base-color)
   +background-clip('padding-box')
   border-width: 1px
@@ -68,7 +70,7 @@
     +box-shadow(none)
     border-color: $border-color
 
-#point, #activity
+#point, #activity, #info_page
   margin-top: 40px
 #mini_nav
   position: fixed
@@ -78,6 +80,13 @@
   background: #ececec
   width: 100%
   border-bottom: solid 2px #888
+  a
+    float: left
+    margin-right: 10px
+  #pages_nav
+    float: left
+    a
+      +nice-button-small(#155969)
 #mobile
   p
     margin-bottom: 20px
@@ -131,7 +140,22 @@
     background: #8c0b0b
     display: none
 
+@media screen and (orientation:portrait)
+  body 
+    background: #444
+  
 
+
+@media screen and (orientation:landscape) 
+  body 
+    background: #222
+
+
+/* Landscape */
+
+#gallery 
+  img
+    display: block
 
 #qr
   clear: both

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830220454) do
+ActiveRecord::Schema.define(:version => 20110901085405) do
 
   create_table "activities", :force => true do |t|
     t.integer  "point_id"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(:version => 20110830220454) do
     t.datetime "updated_at"
   end
 
+  create_table "pages", :force => true do |t|
+    t.integer  "point_id"
+    t.string   "nav_name"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "points", :force => true do |t|
     t.float    "lat"
     t.float    "lng"
@@ -58,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20110830220454) do
   create_table "routes_points", :force => true do |t|
     t.integer  "route_id"
     t.integer  "point_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sub_pages", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "nav_name"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

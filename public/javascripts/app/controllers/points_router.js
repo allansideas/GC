@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Wed, 31 Aug 2011 07:54:24 GMT from
+/* DO NOT MODIFY. This file was compiled Fri, 02 Sep 2011 02:06:35 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/controllers/points_router.coffee
  */
 
@@ -28,23 +28,28 @@
       this.page.marks.reset(options.marks);
       this.page.all_activity_instances = new App.Collections.ActivityInstancesCollection();
       this.page.all_activity_instances.reset(options.all_activity_instances);
-      return this.page.all_activity_instances.min(function(ai) {
+      this.page.all_activity_instances.min(function(ai) {
         if (ai.attributes.total_milliseconds !== null) {
           return ai.attributes.total_milliseconds;
         }
       });
+      this.page.pages = new App.Collections.PagesCollection();
+      return this.page.pages.reset(options.pages);
     };
     PointsRouter.prototype.routes = {
       "": "showPoint",
       "/activities/:activity": "showActivity",
-      "/start/:activity_id": "startActivity"
+      "/start/:activity_id": "startActivity",
+      "/page/:page_id": "showPage",
+      "/page/:page_id/:sub_page_id": "showSubPage"
     };
     PointsRouter.prototype.showPoint = function() {
       if (!this.user.attributes.current_activity_instance) {
         return this.view = new App.Views.Points.ShowView({
           point: this.point,
           activities: this.activities,
-          el: $('#point')
+          el: $('#point'),
+          pages: this.page.pages
         });
       } else {
         return this.view = new App.Views.ActivityInstances.ShowView({
@@ -79,6 +84,13 @@
       return this.activity_instance = this.activity_instances.create({
         user_id: this.user.id,
         activity_id: activity_id
+      });
+    };
+    PointsRouter.prototype.showPage = function(page_id) {
+      console.log(this.page.pages.get(page_id));
+      return this.view = new App.Views.Pages.PageView({
+        page: this.page.pages.get(page_id),
+        el: $('#info_page')
       });
     };
     return PointsRouter;

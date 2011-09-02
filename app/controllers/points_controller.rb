@@ -13,5 +13,10 @@ class PointsController < InheritedResources::Base
     if !@all_activity_instances
       @all_activity_instances = ""
     end
+    if !@point.pages
+      @pages = ""
+    else
+      @pages = @point.pages
+    end
   end
 end

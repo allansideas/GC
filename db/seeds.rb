@@ -27,3 +27,15 @@ routes_points = RoutesPoints.create([
                       {:route_id => 2, :point_id => 3}
                       ])
 
+pages = Page.create([
+        {:point_id => 1, :nav_name => "Page 1", :content => "Some Content"},
+        {:point_id => 1, :nav_name => "Page 2", :content => "Some Content for page 2"},
+        {:point_id => 2, :nav_name => "Page 3", :content => "Some Content for page 1"}
+        ])
+
+subpages = SubPage.create([
+        {:page_id => 1, :nav_name => "Sub Page 1", :content => "Sub page Some Content"},
+        {:page_id => 1, :nav_name => "Sub Page 2", :content => "<strong> sub Some Content for page 2</strong>"},
+        {:page_id => 2, :nav_name => "Sub Page 3", :content => "Some Content for page 1"},
+        {:page_id => 2, :nav_name => "Sub Page 4", :content => "Some Content for page 1"}
+        ])

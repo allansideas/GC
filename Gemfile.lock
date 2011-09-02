@@ -120,6 +120,7 @@ GEM
       activesupport (= 3.0.7)
       bundler (~> 1.0)
       railties (= 3.0.7)
+    rails_admin (0.0.0)
     railties (3.0.7)
       actionpack (= 3.0.7)
       activesupport (= 3.0.7)
@@ -187,6 +188,7 @@ DEPENDENCIES
   jquery-rails
   machinist (>= 2.0.0.beta2)
   rails (= 3.0.7)
+  rails_admin
   rake (= 0.8.7)
   rspec (>= 2.0.0.alpha.11)
   rspec-rails (>= 2.0.0.alpha.11)

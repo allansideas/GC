@@ -6,7 +6,6 @@
 
 %title
   == #{ controller.controller_name.titleize } - #{ controller.action_name.titleize }
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=1;" /> <meta name="apple-mobile-web-app-capable" content="yes" /> <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />  
 %meta{ :name => "description", :content => "" }/
 %meta{ :name => "author", :content => "" }/
 %meta{ :name => "user_id", :content => "#{current_user.to_json(:only => [:id, :email]) if current_user}"}/
@@ -19,8 +18,6 @@
 - if local_assigns[:stylesheet_partial]
   = render :partial => local_assigns[:stylesheet_partial]
 
--# All JavaScript at the bottom, except for Modernizr and Respond.
--# Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
 = javascript_include_tag 'modernizr.min', 'respond.min'
 = include_stylesheets :common   
 = include_javascripts :common, :application    

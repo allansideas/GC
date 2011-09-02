@@ -4,6 +4,7 @@ Gchamp::Application.routes.draw do
   resources :marks
   resources :activities
   resources :points
+  resources :pages
   resources :routes do
     collection do
       get :route_by_activity_id
