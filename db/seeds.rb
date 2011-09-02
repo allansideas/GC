@@ -34,7 +34,7 @@ pages = Page.create([
         ])
 
 subpages = SubPage.create([
-        {:page_id => 1, :nav_name => "Sub Page 1", :content => "Sub page Some Content"},
+        {:page_id => 1, :nav_name => "Sub Page 1", :content => "<div id='gallery'><img src='/images/gal1.jpg' /><img src='/images/gal2.jpg'><img src='/images/gal3.jpg' /></div>"},
         {:page_id => 1, :nav_name => "Sub Page 2", :content => "<strong> sub Some Content for page 2</strong>"},
         {:page_id => 2, :nav_name => "Sub Page 3", :content => "Some Content for page 1"},
         {:page_id => 2, :nav_name => "Sub Page 4", :content => "Some Content for page 1"}
