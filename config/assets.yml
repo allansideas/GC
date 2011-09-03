@@ -16,6 +16,8 @@ javascripts:
     - public/javascripts/rails.js
     - public/javascripts/transform.js
     - public/javascripts/handlebars.js
+    - public/javascripts/commons.js
+    - public/javascripts/wadda.js
       
   application:
     - public/javascripts/app/lib/*

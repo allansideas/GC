@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Fri, 02 Sep 2011 03:06:27 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 03 Sep 2011 00:06:35 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/pages/page_view.coffee
  */
 
@@ -23,7 +23,7 @@
     };
     PageView.prototype.events = function() {
       return {
-        "click #gallery img": "transform"
+        "click #gallery img": "zoomImage"
       };
     };
     PageView.prototype.initialize = function(options) {
@@ -53,6 +53,14 @@
     };
     PageView.prototype.resizeImages = function() {
       return $('#gallery img').width(280);
+    };
+    PageView.prototype.zoomImage = function(e) {
+      this.view = new App.Views.Images.ImageView({
+        el: $("#image_zoom"),
+        from: window.location,
+        src: _.last($(e.target).attr("src").split('/')).replace(".jpg", "")
+      });
+      return this.view.render;
     };
     PageView.prototype.transform = function(e) {
       return $(e.target).animate({

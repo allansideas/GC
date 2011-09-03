@@ -5,7 +5,7 @@ class App.Views.Pages.PageView extends Backbone.View
     return JST["pages/page"]
 
   events: ->
-    "click #gallery img" : "transform"
+    "click #gallery img" : "zoomImage"
       
   initialize:(options) ->
     @options = options
@@ -25,7 +25,6 @@ class App.Views.Pages.PageView extends Backbone.View
     $("#gallery img").animate(
       translateX: '-=800'
       ,0)
-
     for img, i in $("#gallery img")
       $(img).delay(i * 90).animate(
         rotateY: '+='+(2*Math.PI),
@@ -37,6 +36,13 @@ class App.Views.Pages.PageView extends Backbone.View
 
   resizeImages: () ->
     $('#gallery img').width(280)
+
+  zoomImage: (e)->
+    @view = new App.Views.Images.ImageView
+      el: $("#image_zoom")
+      from: window.location
+      src: _.last($(e.target).attr("src").split('/')).replace(".jpg", "")
+    @view.render
 
   transform: (e) ->
     $(e.target).animate(
