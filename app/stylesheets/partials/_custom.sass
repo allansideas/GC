@@ -1,5 +1,9 @@
 body 
+  color: #ececec
   height: 101%
+  margin: 0 0 1px
+  padding: 0
+  background: url('bg.jpg') left top repeat
 =nice-button($base-color)
   +background-clip('padding-box')
   border-width: 1px
@@ -73,11 +77,12 @@ body
 #point, #activity, #info_page
   margin-top: 40px
 #mini_nav
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   padding: 5px 20px
   background: #ececec
+  z-index: 10
   width: 100%
   border-bottom: solid 2px #888
   a
@@ -140,22 +145,24 @@ body
     background: #8c0b0b
     display: none
 
-@media screen and (orientation:portrait)
-  body 
-    background: #444
+//@media screen and (orientation:portrait)
+  //body 
+    //background: #444
   
 
 
-@media screen and (orientation:landscape) 
-  body 
-    background: #222
+//@media screen and (orientation:landscape) 
+  //body 
+    //background: #222
 
 
 /* Landscape */
 
 #gallery 
   img
+    border: solid 4px #333
     display: block
+    margin-bottom: 10px
 
 #qr
   clear: both
@@ -250,6 +257,15 @@ body
     letter-spacing: 2px
     &:hover, &.current
       color: #fdff3e
+#info_page
+  img
+    width: auto
+    margin: 0 auto
+    margin-bottom: 10px
+#zoomy_image
+  img
+    width: 100%
+    border: solid 4px #333
 .page
   padding: 20px 30px
   color: #fff

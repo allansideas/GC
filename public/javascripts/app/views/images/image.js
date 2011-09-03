@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sat, 03 Sep 2011 01:57:15 GMT from
+/* DO NOT MODIFY. This file was compiled Sat, 03 Sep 2011 03:16:03 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/images/image.coffee
  */
 
@@ -35,11 +35,11 @@
       console.log(td);
       $(this.el).html(this.template()(td)).show();
       wad = new Wadda('thumb', {
-        lensSize: 150,
+        lensSize: 120,
         xOff: 0,
-        yOff: 0,
+        yOff: -50,
         fadeLens: false,
-        zoom: 1
+        zoom: 2
       });
       return this;
     };

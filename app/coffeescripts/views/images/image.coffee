@@ -17,11 +17,11 @@ class App.Views.Images.ImageView extends Backbone.View
     console.log td
     $(@el).html(@template()(td)).show()
     wad = new Wadda('thumb', 
-      lensSize: 150,
+      lensSize: 120,
       xOff: 0,
-      yOff: 0
+      yOff: -50,
       fadeLens: false,
-      zoom: 1,
+      zoom: 2
     )
 
     return this
