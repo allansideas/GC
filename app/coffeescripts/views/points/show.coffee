@@ -4,6 +4,9 @@ class App.Views.Points.ShowView extends Backbone.View
   template: ->
     return JST["points/show"]
       
+  events: 
+    "click #show_map" : "showMap"
+
   initialize: ->
     $('.screen').hide()
     $('#point').show()
@@ -18,3 +21,6 @@ class App.Views.Points.ShowView extends Backbone.View
     return this
 
 
+  showMap: ->
+    $('#point_map').show()
+    Gmaps4Rails.callback()

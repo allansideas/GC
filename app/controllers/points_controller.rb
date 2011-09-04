@@ -5,6 +5,7 @@ class PointsController < InheritedResources::Base
 
   def show
     @point = Point.find(params[:id])
+    @map_json = @point.to_gmaps4rails
     @activities = @point.activities
     @activity_instance = current_user.activity_instance
     @activity = current_user.partaking_in

@@ -164,6 +164,11 @@ body
     display: block
     margin-bottom: 10px
 
+#point_map
+  #map
+    width: 288px
+    height: 280px
+    border: solid 4px #333
 #qr
   clear: both
   img
@@ -266,6 +271,15 @@ body
   img
     width: 100%
     border: solid 4px #333
+
+#zoom_buttons
+  margin: 0 auto
+  .button
+    +nice-button-small(#ccc)
+    float: left
+    margin-right: 5px
+    margin-bottom: 5px
+
 .page
   padding: 20px 30px
   color: #fff

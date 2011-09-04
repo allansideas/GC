@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sat, 03 Sep 2011 03:16:03 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 04 Sep 2011 01:32:00 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/images/image.coffee
  */
 
@@ -21,6 +21,9 @@
     ImageView.prototype.template = function() {
       return JST["images/image"];
     };
+    ImageView.prototype.events = {
+      "click #zoom_buttons .button": "setZoom"
+    };
     ImageView.prototype.initialize = function(options) {
       this.options = options;
       $('.screen').hide();
@@ -28,13 +31,13 @@
       return this.render();
     };
     ImageView.prototype.render = function() {
-      var td, wad;
+      var td;
       td = {};
       td.src = this.options.src;
       td.from = this.options.from;
       console.log(td);
       $(this.el).html(this.template()(td)).show();
-      wad = new Wadda('thumb', {
+      this.wad = new Wadda('thumb', {
         lensSize: 120,
         xOff: 0,
         yOff: -50,
@@ -42,6 +45,11 @@
         zoom: 2
       });
       return this;
+    };
+    ImageView.prototype.setZoom = function(e) {
+      var zoom;
+      zoom = parseInt($(e.target).text().replace("x", ""));
+      return this.wad.setZoom(zoom);
     };
     return ImageView;
   })();

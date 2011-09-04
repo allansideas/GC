@@ -40,7 +40,7 @@ class App.Views.Pages.PageView extends Backbone.View
   zoomImage: (e)->
     @view = new App.Views.Images.ImageView
       el: $("#image_zoom")
-      from: window.location
+      from: window.location.pathname + window.location.hash
       src: _.last($(e.target).attr("src").split('/')).replace(".jpg", "")
     @view.render
 

@@ -4,6 +4,9 @@ class App.Views.Images.ImageView extends Backbone.View
   template: ->
     return JST["images/image"]
 
+  events:
+    "click #zoom_buttons .button" : "setZoom"
+
   initialize:(options) ->
     @options = options
     $('.screen').hide()
@@ -16,15 +19,20 @@ class App.Views.Images.ImageView extends Backbone.View
     td.from = @options.from
     console.log td
     $(@el).html(@template()(td)).show()
-    wad = new Wadda('thumb', 
+    @wad = new Wadda('thumb', 
       lensSize: 120,
       xOff: 0,
       yOff: -50,
       fadeLens: false,
       zoom: 2
     )
-
     return this
+
+  setZoom : (e)->
+    zoom = parseInt $(e.target).text().replace("x","")
+    @wad.setZoom(zoom)
+
+
     #$("#gallery img").animate(
       #translateX: '-=800'
       #,0)

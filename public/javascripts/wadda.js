@@ -169,13 +169,13 @@ Wadda.prototype = {
       //return;
     //}
 
-    //if(e.touches != undefined) {
-    var posX = e.touches[0].pageX;
-    var posY = e.touches[0].pageY;
-   // } else {
-    //var posX = e.pageX;
-    //var posY = e.pageY;
-    //} 
+    if(e.type == "mousemove"){
+      var posX = e.pageX;
+      var posY = e.pageY;
+    } else {
+      var posX = e.touches[0].pageX;
+      var posY = e.touches[0].pageY;
+    } 
     var centerX = me.canv.width/2;
     var centerY = me.canv.height/2;
     var clW = me.canv.width/2;

@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sat, 03 Sep 2011 00:06:35 GMT from
+/* DO NOT MODIFY. This file was compiled Sun, 04 Sep 2011 01:26:49 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/pages/page_view.coffee
  */
 
@@ -57,7 +57,7 @@
     PageView.prototype.zoomImage = function(e) {
       this.view = new App.Views.Images.ImageView({
         el: $("#image_zoom"),
-        from: window.location,
+        from: window.location.pathname + window.location.hash,
         src: _.last($(e.target).attr("src").split('/')).replace(".jpg", "")
       });
       return this.view.render;

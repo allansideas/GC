@@ -1,9 +1,19 @@
 #mobile
+  #point_nav
+    -@point.pages.each do |p|
+      -if p.p_type == "info"
+        #info.nav
+      -if p.p_type == "active"
+        #active.nav
+      -if p.p_type == "gallery"
+        #gallery_nav.nav
   #point.screen
   #activity.screen
   #info_page.screen
   #activity_instance.screen
   #image_zoom.screen
+  #point_map
+    =gmaps({"markers" => {"data" => @map_json}, "map_options" => {"auto_adjust" => true, "auto_zoom" => false}}, false)
 
 <audio id="press" preload>
 <source src="/audio/button_press.mp3" type="audio/mp3" />
@@ -36,5 +46,20 @@
   Backbone.history.start();
   });
 
-
+- content_for :scripts do
+  :javascript
+    Gmaps4Rails.callback = function(){
+      console.log(Gmaps.map.markers)
+      if (Gmaps.map.markers.length == 1) {
+       //only one marker, choose the zoom level you expect
+       Gmaps.map.map.setZoom(13);
+       //Gmaps.map.map.setCenter(new google.maps.LatLng(#{@point.lat.round(5)},#{@point.lng.round(5)}), 13);
+      }
+      else{
+       console.log("multi");
+       //more than one marker, let's auto_zoom
+       Gmaps.map_options.auto_zoom = true;
+       Gmaps.adjust_map_to_bounds();
+      }
+    };
 

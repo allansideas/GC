@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'inherited_resources'
 gem "rake", "0.8.7"
 gem 'devise'
+gem 'gmaps4rails'
+em 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', :branch => "rails-3.0"
 
 #Visual
 gem "compass", ">= 0.11.5"
