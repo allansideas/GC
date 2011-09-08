@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 04 Sep 2011 00:35:40 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Sep 2011 11:05:20 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/points/show.coffee
  */
 
@@ -36,10 +36,6 @@
       td.pages = this.options.pages.toJSON();
       $(this.el).html(this.template()(td)).fadeIn(300);
       return this;
-    };
-    ShowView.prototype.showMap = function() {
-      $('#point_map').show();
-      return Gmaps4Rails.callback();
     };
     return ShowView;
   })();

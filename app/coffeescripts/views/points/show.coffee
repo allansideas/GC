@@ -21,6 +21,6 @@ class App.Views.Points.ShowView extends Backbone.View
     return this
 
 
-  showMap: ->
-    $('#point_map').show()
-    Gmaps4Rails.callback()
+  #showMap: ->
+    #$('#point_map').show()
+    #Gmaps4Rails.callback()

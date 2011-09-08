@@ -19,16 +19,17 @@ class App.Views.Pages.PageView extends Backbone.View
 
   render: ->
     #td = @options.page.toJSON()
-    td=' <div id="mini_nav"> <a href="#" class="button small black">back</a> </div>'
-    td += @options.page.attributes.content
+    td = @options.page.attributes.content
     $(@el).html(td).show()
     $("#gallery img").animate(
-      translateX: '-=800'
+      translateX: '-=800',
+      scale: '-=1'
       ,0)
     for img, i in $("#gallery img")
       $(img).delay(i * 90).animate(
         rotateY: '+='+(2*Math.PI),
         translateX: '+=800',
+        scale: '+=1',
         rotateZ: '+='+(2*Math.PI)
         ,600
       )

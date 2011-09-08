@@ -74,12 +74,48 @@ body
     +box-shadow(none)
     border-color: $border-color
 
-#point, #activity, #info_page
-  margin-top: 40px
+#point_nav
+  height: 46px
+  border-top: solid 2px #333
+  border-bottom: solid 1px #333
+  +linear-gradient(color-stops(#222, #111, #000))
+  #logo 
+    float: left
+    margin: 3px 10px 0px 10px
+  .nav
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-focus-ring-color:  rgba(0, 0, 0, 0)
+    width: 32px
+    padding: 0 10px
+    border-right: solid 1px #222
+    height: 46px
+    float: left
+    display: block
+    &#info
+      background: url(info.png) 10px 6px no-repeat
+      &.depressed
+        background-color: #1176c4
+        +box-shadow(#111, -1px, -1px, 2px, 1px, inset)
+    &#history
+      background: url(history.png) 10px 6px no-repeat
+      &.depressed
+        background-color: #1176c4
+        +box-shadow(#111, -1px, -1px, 2px, 1px, inset)
+    &#gallery
+      background: url(gallery.png) 10px 10px no-repeat
+      &.depressed
+        background-color: #701313
+        +box-shadow(#111, -1px, -1px, 2px, 1px, inset)
+    &#goog_map
+      background: url(marker.png) 10px 6px no-repeat
+    &#active.nav
+      background: url(walk.png) 10px 6px no-repeat
+      &.depressed
+        background-color: #127A00
+        +box-shadow(#111, -1px, -1px, 2px, 1px, inset)
+#point, #activity, #info_page, #zoomy_image, #activities
+  margin-top: 20px
 #mini_nav
-  position: absolute
-  top: 0
-  left: 0
   padding: 5px 20px
   background: #ececec
   z-index: 10
@@ -93,19 +129,23 @@ body
     a
       +nice-button-small(#155969)
 #mobile
+  min-height: 600px
   p
-    margin-bottom: 20px
     font-size: 16px
-  h2
-    width: 100%
-    background: #ddddd3
+    padding: 16px
+  p.fun_fact
+    padding: 10px
+    background: #ececec
     color: #333
-    text-align: center
-    padding: 5px 0
-    border-top: solid 2px darken(#ddddd3, 5%)
-    border-bottom: solid 2px darken(#ddddd3, 5%)
+    font-size: 14px
+    font-style: italic
+    padding: 10px 16px
+    +box-shadow(#333, 1px, 1px, 3px, 0, inset)
+  h2
+    margin-left: 16px
+    color: #ececec
     font-size: 24px
-    margin-bottom: 20px
+    margin-bottom: 16px
   form
     width: 100%
     margin: 0 auto
@@ -126,17 +166,22 @@ body
       +nice-button(#74c044)
     
 .button
+  width: 90%
+  margin: 0 auto
+  padding: 12px 0 !important
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   margin-bottom: 20px
   &.activity
     +nice-button(#74c044)
+  &.black
+    +nice-button(#111)
   &.small
     +nice-button-small(#555)
     margin-bottom: 0
   &#start
     color: #fff
     background: #075805
-  &#split
+  &#split_button
     +nice-button(#555)
     color: #fff
     background: #232352
@@ -154,9 +199,10 @@ body
 //@media screen and (orientation:landscape) 
   //body 
     //background: #222
-
-
-/* Landscape */
+#login
+  p
+    padding: 0
+    margin-bottom: 10px
 
 #gallery 
   img
@@ -175,6 +221,8 @@ body
     display:block
     clear: both
 .mark
+  width: 80%
+  margin: 0 auto
   background: #888
   font-size: 18px
   font-weight: bold
@@ -264,21 +312,23 @@ body
       color: #fdff3e
 #info_page
   img
-    width: auto
-    margin: 0 auto
+    width: 280px
+    float: left
+    margin-left: 16px
     margin-bottom: 10px
 #zoomy_image
   img
-    width: 100%
+    margin-left: 16px
+    width: 280px
     border: solid 4px #333
 
 #zoom_buttons
-  margin: 0 auto
+  margin-left: 35px
   .button
     +nice-button-small(#ccc)
     float: left
     margin-right: 5px
-    margin-bottom: 5px
+    margin-bottom: 10px
 
 .page
   padding: 20px 30px

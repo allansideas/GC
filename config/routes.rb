@@ -5,6 +5,7 @@ Gchamp::Application.routes.draw do
   resources :activities
   resources :points
   resources :pages
+  resources :routespoints
   resources :routes do
     collection do
       get :route_by_activity_id
@@ -15,6 +16,7 @@ Gchamp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  match 'demo/start' => 'demo#start'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -61,7 +63,7 @@ Gchamp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#index"
+  root :to => "demo#start"
 
   # See how all your routes lay out with "rake routes"
 

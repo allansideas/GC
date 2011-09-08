@@ -1,4 +1,4 @@
-/* DO NOT MODIFY. This file was compiled Sun, 04 Sep 2011 01:26:49 GMT from
+/* DO NOT MODIFY. This file was compiled Wed, 07 Sep 2011 22:51:24 GMT from
  * /home/test/code/rails/_personal/gchamp/app/coffeescripts/views/pages/page_view.coffee
  */
 
@@ -34,11 +34,11 @@
     };
     PageView.prototype.render = function() {
       var i, img, td, _len, _ref;
-      td = ' <div id="mini_nav"> <a href="#" class="button small black">back</a> </div>';
-      td += this.options.page.attributes.content;
+      td = this.options.page.attributes.content;
       $(this.el).html(td).show();
       $("#gallery img").animate({
-        translateX: '-=800'
+        translateX: '-=800',
+        scale: '-=1'
       }, 0);
       _ref = $("#gallery img");
       for (i = 0, _len = _ref.length; i < _len; i++) {
@@ -46,6 +46,7 @@
         $(img).delay(i * 90).animate({
           rotateY: '+=' + (2 * Math.PI),
           translateX: '+=800',
+          scale: '+=1',
           rotateZ: '+=' + (2 * Math.PI)
         }, 600);
       }
